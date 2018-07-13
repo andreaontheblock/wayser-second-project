@@ -12,4 +12,9 @@
   <br><br>
 
   <button>LOG IN</button>
+  {{#if messages.length}}
+  <ul class="validation">
+    {{#each messages}}<li>{{this}}</li>{{/each}}
+  </ul>
+  {{/if}}
 </form>
