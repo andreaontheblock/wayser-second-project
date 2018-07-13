@@ -4,9 +4,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-  username: String,
-  password: String,
-  email: String
+  username: {type: String, unique: true, required: true},
+  password: {type: String, required: true},
+  email: {type: String, required: true}
 });
 
 // estamos creando TEMPLATES NO creando en sí. Movie con mayuscula pq es como si fuese un constructor

@@ -5,8 +5,8 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.Types.ObjectId;
 
 const serviceSchema = new Schema({
-  name: String,
-  category: {type: String, enum: ['Education', 'Teconolgy', 'Health Care']},
+  name: {type: String, required: true},
+  category: {type: String, enum: ['Education', 'Teconolgy', 'Health Care'], required: true},
   //  solo pones [] pq es array
   provider: [{
     type: ObjectId,
@@ -15,8 +15,8 @@ const serviceSchema = new Schema({
   }],
   price: {
     amount: Number,
-    unit: {type: String, enum: ['/hour', '/day', '/month']}
-
+    unit: {type: String, enum: ['/hour', '/day', '/month']},
+    required: true
   }
 });
 
