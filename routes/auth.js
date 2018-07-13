@@ -3,6 +3,7 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
+const validator = require('validator');
 
 const User = require('../models/user');
 
@@ -50,6 +51,11 @@ router.post('/signup', (req, res, next) => {
         .then((user) => {
           if (user) {
             req.flash('signup-error', 'Email already taken');
+            res.redirect('/auth/signup');
+            return;
+          }
+          if (!validator.isEmail(req.body.email)) {
+            req.flash('signup-error', 'Please enter a valid email');
             res.redirect('/auth/signup');
             return;
           }
