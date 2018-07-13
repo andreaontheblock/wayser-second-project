@@ -19,7 +19,7 @@ const app = express();
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
-const dbName = 'wayer-db';
+const dbName = 'wayser';
 mongoose.connect(`mongodb://localhost/${dbName}`);
 
 // view engine setup
