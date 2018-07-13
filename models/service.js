@@ -6,7 +6,7 @@ const ObjectId = Schema.Types.ObjectId;
 
 const serviceSchema = new Schema({
   name: {type: String, required: true},
-  category: {type: String, enum: ['Education', 'Teconolgy', 'Health Care'], required: true},
+  category: {type: String, enum: ['Education', 'Teconolgy', 'Health Care', 'Transportation', 'Social services', 'Maintenance', 'Business', 'Tourism', 'Others'], required: true},
   //  solo pones [] pq es array
   provider: [{
     type: ObjectId,

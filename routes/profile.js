@@ -9,4 +9,8 @@ router.get('/', (req, res, next) => {
   res.render('profile', {currentUser: currentUser});
 });
 
+router.get('/create-service', (req, res, next) => {
+  res.render('create-service');
+});
+
 module.exports = router;
