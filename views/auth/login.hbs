@@ -1,15 +1,17 @@
 
 <form id="form" action="/auth/login" method="POST">
   <h1>I REMEMBER YOU.. WELCOME AGAIN</h1>
-  <label for="username">Username</label><br>
-  <input type="text" name="username"
+  <div>
+    <label for="username">Username</label>
+    <input type="text" name="username"
     placeholder="ej: andreaontheblock">
+  </div>
 
-  <br><br>
-  <label for="password">Password</label><br>
-  <input type="password" name="password"
-    placeholder="ej: Securepasword12">
-  <br><br>
+  <div>
+    <label for="password">Password</label>
+    <input type="password" name="password"
+      placeholder="ej: Securepasword12">
+  </div>
 
   <button>LOG IN</button>
   {{#if messages.length}}
@@ -18,3 +20,4 @@
   </ul>
   {{/if}}
 </form>
+

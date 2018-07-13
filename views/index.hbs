@@ -1,1 +1,28 @@
-<h1>Hello</h1>
+<h1>WAYSER</h1>
+<h2>What are you looking for?</h2>
+
+{{!-- GET pq esta buscando pero no cambiando base de datos --}}
+<form method="GET" action="/services">
+
+  <div class="field" >
+    <input type="text" name="search" placeholder="Type the service you need"/>
+  </div>
+
+  <div class="field submit">
+    <button type="submit">Search</button>
+  </div>
+
+</form>
+
+{{!-- NO ES DRY PERO LA MONTSE MANDA --}}
+
+<a href="/services/education">Education</a>
+<a href="/services/technology">Technology</a>
+<a href="/services/health-care">Health Care</a>
+<a href="/services/transportation">Transportation</a>
+<a href="/services/social-services">Social Services</a>
+<a href="/services/maintenance">Maintenance</a>
+<a href="/services/business">Business</a>
+<a href="/services/tourism">Tourism</a>
+<a href="/services/others">Others</a>
+
