@@ -3,6 +3,10 @@
 const mongoose = require('mongoose');
 const User = require('../models/user');
 const Service = require('../models/service');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+const salt = bcrypt.genSaltSync(saltRounds);
+
 const dbName = 'wayser';
 mongoose.connect(`mongodb://localhost/${dbName}`);
 
@@ -12,42 +16,42 @@ Service.collection.drop();// da error si la coleccion no tiene nada pero funcion
 const users = [
   {
     username: 'Montse',
-    password: 'montse',
+    password: bcrypt.hashSync('montse', salt).toString(),
     email: 'montse@montse.com'
   },
   {
     username: 'Jose',
-    password: 'jose',
+    password: bcrypt.hashSync('jose', salt).toString(),
     email: 'jose@jose.com'
   },
   {
     username: 'Javi',
-    password: 'javi',
+    password: bcrypt.hashSync('javi', salt).toString(),
     email: 'javi@javi.com'
   },
   {
     username: 'Andrea',
-    password: 'andrea',
+    password: bcrypt.hashSync('andrea', salt).toString(),
     email: 'andrea@andrea.com'
   },
   {
     username: 'Will',
-    password: 'will',
+    password: bcrypt.hashSync('will', salt).toString(),
     email: 'will@will.com'
   },
   {
     username: 'Sebas',
-    password: 'sebas',
+    password: bcrypt.hashSync('sebas', salt).toString(),
     email: 'sebas@sebas.com'
   },
   {
     username: 'Daniela',
-    password: 'daniela',
+    password: bcrypt.hashSync('daniela', salt).toString(),
     email: 'daniela@daniela.com'
   },
   {
     username: 'Gabriel',
-    password: 'gabriel',
+    password: bcrypt.hashSync('gabriel', salt).toString(),
     email: 'gabriel@gabriel.com'
   }
 ];
