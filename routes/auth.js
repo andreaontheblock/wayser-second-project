@@ -32,8 +32,8 @@ router.post('/signup', (req, res, next) => {
     return;
   }
 
-  if (!req.body.username || !req.body.password) {
-    req.flash('signup-error', 'flaco, escribí algo, no seás boludo');
+  if (!req.body.username || !req.body.password || !req.body.email) {
+    req.flash('signup-error', 'Please complete all fields');
     res.redirect('/auth/signup');
     return;
   }
@@ -41,29 +41,35 @@ router.post('/signup', (req, res, next) => {
   User.findOne({username: req.body.username})
     .then((user) => {
       if (user) {
-        req.flash('signup-error', 'pelotudo, un poco de originalidad');
+        req.flash('signup-error', 'Username already taken');
         res.redirect('/auth/signup');
         return;
       }
 
-      const salt = bcrypt.genSaltSync(saltRounds);
-      const hashedPassword = bcrypt.hashSync(req.body.password, salt);
+      return User.findOne({email: req.body.email})
+        .then((user) => {
+          if (user) {
+            req.flash('signup-error', 'Email already taken');
+            res.redirect('/auth/signup');
+            return;
+          }
 
-      const newUser = new User({
-        username: req.body.username,
-        password: hashedPassword,
-        location: {
-          type: 'Point',
-          coordinates: [req.body.latitude, req.body.longitude]
-        }
-      });
+          const salt = bcrypt.genSaltSync(saltRounds);
+          const hashedPassword = bcrypt.hashSync(req.body.password, salt);
 
-      newUser.save()
-        .then(() => {
-          req.session.currentUser = newUser;
-          res.redirect('/');
-        })
-        .catch(next);
+          const newUser = new User({
+            username: req.body.username,
+            password: hashedPassword,
+            email: req.body.email
+          });
+
+          newUser.save()
+            .then(() => {
+              req.session.currentUser = newUser;
+              res.redirect('/');
+            })
+            .catch(next);
+        });
     })
     .catch(next);
 });
