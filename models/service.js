@@ -1,4 +1,5 @@
 'use strict';
+
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const ObjectId = Schema.Types.ObjectId;
@@ -10,7 +11,7 @@ const serviceSchema = new Schema({
   provider: [{
     type: ObjectId,
     // UWU no estoy segura de si ref es services
-    ref: 'Services'
+    ref: 'Service'
   }],
   price: {
     amount: Number,
@@ -19,8 +20,8 @@ const serviceSchema = new Schema({
   }
 });
 
-const User = mongoose.model('Service', serviceSchema);
+const Service = mongoose.model('Service', serviceSchema);
 
-module.exports = User;
+module.exports = Service;
 
 // teniendo los modelos hechos puedo empezar con las views.
