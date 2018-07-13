@@ -12,7 +12,7 @@ router.get('/', function (req, res, next) {
 
 router.get('/:category', function (req, res, next) {
   const serviceCategory = req.params.category;
-  const correctServiceCategory = serviceCategory.charAt(0).toUpperCase() + serviceCategory.substr(1);
+  const correctServiceCategory = serviceCategory.charAt(0).toUpperCase() + serviceCategory.substr(1); // UWU SUPER GREAT CODE IN ONE FUKIN LINE!!
 
   Service.find({category: correctServiceCategory}) // UWU buscar users by category e.g. 'technology'
     .then((users) => {
