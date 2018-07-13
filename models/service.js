@@ -6,7 +6,7 @@ const ObjectId = Schema.Types.ObjectId;
 
 const serviceSchema = new Schema({
   name: {type: String, required: true},
-  category: {type: String, enum: ['Education', 'Teconolgy', 'Health Care', 'Transportation', 'Social services', 'Maintenance', 'Business', 'Tourism', 'Others'], required: true},
+  category: {type: String, enum: ['Education', 'Technolgy', 'Health Care', 'Transportation', 'Social Services', 'Maintenance', 'Business', 'Tourism', 'Others'], required: true},
 
   provider: {type: ObjectId, ref: 'Service'},
   // UWU no estoy segura de si ref es services
