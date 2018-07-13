@@ -1,27 +1,25 @@
+'use strict';
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const ObjectId = Schema.Types.ObjectId;
 
-const userSchema = new Schema({
+const serviceSchema = new Schema({
   name: String,
-  category: Strin,
+  category: {type: String, enum: ['Education', 'Teconolgy', 'Health Care']},
   //  solo pones [] pq es array
-  favourites: [{
+  provider: [{
     type: ObjectId,
-    // ref es el modelo comn  el que tiene relación.
-    ref: 'Movies'
+    // UWU no estoy segura de si ref es services
+    ref: 'Services'
   }],
-  location: {
-    type: {
-      type: String
-    },
-    coordinates: [Number]
+  price: {
+    amount: Number,
+    unit: {type: String, enum: ['/hour', '/day', '/month']}
+
   }
 });
 
-userSchema.index({ location: '2dsphere' });
-//
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model('Service', serviceSchema);
 
 module.exports = User;
 
