@@ -1,13 +1,18 @@
 'use strict';
 
-const createError = require('http-errors');
+// const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const mongoose = require('mongoose');
+const flash = require('connect-flash');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const authRouter = require('./routes/auth');
+const servicesRouter = require('./routes/services');
+const profileRouter = require('./routes/profile');
 
 const app = express();
 
@@ -23,6 +28,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/auth', authRouter);
+app.use('/services', servicesRouter);
+app.use('/profile', profileRouter);
 
 // -- 404 and error handler
 
