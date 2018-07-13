@@ -16,6 +16,12 @@ const profileRouter = require('./routes/profile');
 
 const app = express();
 
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+
+const dbName = 'wayer-db';
+mongoose.connect(`mongodb://localhost/${dbName}`);
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -27,6 +33,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // antes de las rutas
+
 app.use(session({
   store: new MongoStore({
     mongooseConnection: mongoose.connection,
