@@ -7,15 +7,13 @@ const ObjectId = Schema.Types.ObjectId;
 const serviceSchema = new Schema({
   name: {type: String, required: true},
   category: {type: String, enum: ['Education', 'Teconolgy', 'Health Care', 'Transportation', 'Social services', 'Maintenance', 'Business', 'Tourism', 'Others'], required: true},
-  //  solo pones [] pq es array
-  provider: [{
-    type: ObjectId,
-    // UWU no estoy segura de si ref es services
-    ref: 'Service'
-  }],
+
+  provider: {type: ObjectId, ref: 'Service'},
+  // UWU no estoy segura de si ref es services
+
   price: {
     amount: Number,
-    unit: {type: String, enum: ['/hour', '/day', '/month']},
+    unit: {type: String, enum: ['/hour', '/day', '/week', '/month', '/year', '/lesson']},
     required: true
   }
 });
