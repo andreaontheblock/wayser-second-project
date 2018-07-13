@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
-const User = require('../models/user');
+// const User = require('../models/user');
 const Service = require('../models/service');
 
 /* GET home page. */
@@ -16,6 +16,9 @@ router.get('/create-service', (req, res, next) => {
 });
 
 router.post('/create-service', (req, res, next) => {
+  console.log('HOLA!');
+  console.log(req.body);
+
   const newService = new Service({
     name: req.body.job,
     category: req.body.category,
@@ -24,9 +27,13 @@ router.post('/create-service', (req, res, next) => {
       amount: req.body.priceNumber,
       unit: req.body.priceText
     }
-
   });
-  res.redirect('profile');
+
+  newService.save()
+    .then(() => {
+      res.redirect('/profile');
+    })
+    .catch(next);
 });
 
 module.exports = router;

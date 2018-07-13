@@ -12,9 +12,12 @@ const serviceSchema = new Schema({
   // UWU no estoy segura de si ref es services
 
   price: {
-    amount: Number,
-    unit: {type: String, enum: ['/hour', '/day', '/week', '/month', '/year', '/lesson']},
-    required: true
+    amount: {type: String, required: true},
+    unit: {
+      type: String,
+      enum: ['hour', 'day', 'week', 'month', 'year', 'lesson'],
+      required: true
+    }
   }
 });
 
