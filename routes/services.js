@@ -12,8 +12,20 @@ router.get('/', function (req, res, next) {
 
 router.get('/:category', function (req, res, next) {
   const serviceCategory = req.params.category;
+  let correctServiceCategory = '';
+  for (var i = 0; i < serviceCategory.length; i++) { // UWU proceso explicar Andrea
+    if (i === 0) {
+      correctServiceCategory += serviceCategory[i].toUpperCase();
+    } else {
+      correctServiceCategory += serviceCategory[i];
+    }
+  };
 
-  Service.find; // UWU buscar users by category e.g. 'technology'
+  Service.find({category: correctServiceCategory}) // UWU buscar users by category e.g. 'technology'
+    .then((users) => {
+      console.log(users);
+    })
+    .catch(next);
 
   res.render('services-category');
 });
