@@ -4,8 +4,9 @@ const express = require('express');
 const router = express.Router();
 
 /* GET home page. */
-router.get('/profile', function (req, res, next) {
-  res.render('index');
+router.get('/', (req, res, next) => {
+  const currentUser = req.session.currentUser;
+  res.render('profile', {currentUser: currentUser});
 });
 
 module.exports = router;

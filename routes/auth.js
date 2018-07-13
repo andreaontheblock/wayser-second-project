@@ -3,7 +3,7 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
-const validator = require('validator');
+const validator = require('validator'); // Package email validator
 
 const User = require('../models/user');
 
@@ -54,7 +54,7 @@ router.post('/signup', (req, res, next) => {
             res.redirect('/auth/signup');
             return;
           }
-          if (!validator.isEmail(req.body.email)) {
+          if (!validator.isEmail(req.body.email)) { // Validating email
             req.flash('signup-error', 'Please enter a valid email');
             res.redirect('/auth/signup');
             return;
@@ -72,7 +72,7 @@ router.post('/signup', (req, res, next) => {
           newUser.save()
             .then(() => {
               req.session.currentUser = newUser;
-              res.redirect('/');
+              res.redirect('/profile');
             })
             .catch(next);
         });
