@@ -74,7 +74,7 @@ a {
 /* ---- layout: index page ---- */
 
 .index-page {
-  background-color: #71c6eed3;
+  background-color: #1c60add3;
   padding-top: 58px;
   height: 100vh;
 }
@@ -85,10 +85,9 @@ a {
   background-repeat: no-repeat;
 }
 
-.type-yourself-section, 
-.click-categories-section {
+.type-yourself-section {
   text-align: center;
-  padding-top: 50px;
+  padding-top: 70px;
 }
 
 .type-yourself-section h1,
@@ -102,6 +101,22 @@ a {
 
 .search-field {
   display: flex;
+}
+
+/* .wayser-slogan {
+  width: 335px;
+  margin: 0 auto;
+  height: 15vh;
+  position: absolute;
+  top: 15%;
+  background-color: grey;
+  opacity: 0.6;
+} */
+
+.click-categories-section {
+  padding-top: 20px;
+  color: white;
+  text-align: center;
 }
 
 .category-btns {
