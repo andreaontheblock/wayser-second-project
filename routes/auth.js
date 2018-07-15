@@ -100,19 +100,19 @@ router.post('/login', (req, res, next) => {
     return;
   }
   if (!req.body.username || !req.body.password) {
-    req.flash('login-error', 'please provide a username and password');
+    req.flash('login-error', 'Please provide a username and password');
     res.redirect('/auth/login');
     return;
   }
   User.findOne({ username: req.body.username })
     .then((user) => {
       if (!user) {
-        req.flash('login-error', 'username or password are incorrect');
+        req.flash('login-error', 'Username or password are incorrect');
         res.redirect('/auth/login');
         return;
       }
       if (!bcrypt.compareSync(req.body.password, user.password)) {
-        req.flash('login-error', 'username or password are incorrect');
+        req.flash('login-error', 'Username or password are incorrect');
         res.redirect('/auth/login');
         return;
       }
