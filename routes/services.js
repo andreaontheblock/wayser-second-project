@@ -10,6 +10,7 @@ router.get('/', function (req, res, next) {
   res.send('respond with a resource');
 });
 
+// UWU refactor when we have time
 router.get('/:category', function (req, res, next) {
   const serviceCategory = req.params.category;
   let correctServiceCategory = serviceCategory.charAt(0).toUpperCase() + serviceCategory.substr(1); // UWU SUPER GREAT CODE IN ONE FUKIN LINE!!
