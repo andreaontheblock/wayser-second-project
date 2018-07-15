@@ -1,13 +1,18 @@
 <section class="services-section">
   <div class= "container">
-    <h1>THE WORK</h1>
-      {{#each services}}
+    <h1>List of Services</h1>
+    <div class="filters">
+      <h5>Filter by:</h5>
+      <label for="">Price</label>
+      <input type="checkbox">
+    </div>
+    {{#each services}}
     <div class= "card">
-        <p>Service: {{this.name}}</p>
+        <h3>{{this.name}}</h3>
         <p>{{this.provider.username}}</p>
         <p>Category: {{this.category}}</p>
         <p>Price: {{this.price.amount}}€/{{this.price.unit}}</p>
     </div>
-      {{/each}}
+    {{/each}}
   </div>
 </section>

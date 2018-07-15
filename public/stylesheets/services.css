@@ -17,3 +17,12 @@
 
   border: 1px solid red 
 }
+
+.filters {
+  display: flex;
+}
+
+.filters h5 {
+  margin: 0;
+  margin-right: 20px;
+}

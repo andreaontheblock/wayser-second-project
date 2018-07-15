@@ -24,7 +24,7 @@ router.get('/', function (req, res, next) {
       filter.category = correctServiceCategory;
     } else {
       res.render('search-not-found');
-      return next();
+      return;
     }
   }
 
