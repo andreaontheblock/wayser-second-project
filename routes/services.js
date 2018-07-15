@@ -34,9 +34,10 @@ router.get('/', function (req, res, next) {
 
   if (req.query.terms) {
     criteria = req.query.terms;
-    Service.find({name: new RegExp(criteria)}).populate('provider');
-    console.log('yeah')
+    Service.find({name: {$regex: new RegExp(criteria), $options: 'i'}}).populate('provider');
+    console.log(new RegExp(criteria))
       .then((services) => {
+        console.log(services, 'hello');
         res.render('services-category', {services: services});
       })
       .catch(next);
