@@ -7,7 +7,8 @@ const Service = require('../models/service');
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
-  const criteria = {};
+  let criteria = '';
+
   if (req.query.cat) {
     // @todo if (invalid category) { return next() }
     const serviceCategory = req.query.cat;
@@ -20,19 +21,26 @@ router.get('/', function (req, res, next) {
       array[1] = arrayUpperCased;
       correctServiceCategory = array.join(' ');
     }
-    criteria.category = correctServiceCategory;
+    criteria = correctServiceCategory;
+
+    Service.find({category: criteria}).populate('provider')
+      .then((services) => {
+        res.render('services-category', {services: services});
+      })
+      .catch(next);
+
+    return;
   }
 
   if (req.query.terms) {
-    // @todo google query mongoose string contains
-    criteria = {name: req.query.terms};
+    criteria = req.query.terms;
+    Service.find({name: new RegExp(criteria)}).populate('provider');
+    console.log('yeah')
+      .then((services) => {
+        res.render('services-category', {services: services});
+      })
+      .catch(next);
   }
-
-  Service.find(criteria).populate('provider') // UWU buscar users by category e.g. 'technology'
-    .then((services) => {
-      res.render('services-category', {services: services});
-    })
-    .catch(next);
 });
 
 module.exports = router;
