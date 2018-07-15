@@ -25,7 +25,7 @@ router.get('/', function (req, res, next) {
 
   if (req.query.terms) {
     // @todo google query mongoose string contains
-    criteria['$reg'] = {name: req.query.terms};
+    criteria = {name: req.query.terms};
   }
 
   Service.find(criteria).populate('provider') // UWU buscar users by category e.g. 'technology'
