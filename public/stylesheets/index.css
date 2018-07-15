@@ -1,13 +1,13 @@
 /* ---- layout: index page ---- */
 
 .index-page {
-  background-color: #124075d3;
+  background-color: #9b0f3b;
   padding-top: 58px;
   height: 100vh;
 }
 
 .img-bg {
-  background-image: url('/images/laptop-img2.jpeg');
+  background-image: url('/images/nurse.jpg');
   background-size: cover;
 }
 
@@ -19,6 +19,8 @@
 .type-yourself-section h1,
 .type-yourself-section p {
   margin: 0;
+  color: white;
+  text-shadow: 1px 1px 2px black;
 }
 
 .type-yourself-section p {

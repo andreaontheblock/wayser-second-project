@@ -3,7 +3,7 @@
 .services-section {
   margin-top: 58px;
   height: 100vh;
-  background-color: red;
+  /* background-color: red; */
 }
 
 .services-section h1 {
@@ -11,4 +11,9 @@
   font-size: 2rem;
   padding-top: 8vh;
   padding-bottom: 10px;
+}
+
+.card {
+
+  border: 1px solid red 
 }

@@ -1,13 +1,13 @@
 <section class="services-section">
   <div class= "container">
     <h1>THE WORK</h1>
+      {{#each services}}
     <div class= "card">
-      <p>{{#each services}}</p>
         <p>Service: {{this.name}}</p>
         <p>{{this.provider.username}}</p>
         <p>Category: {{this.category}}</p>
         <p>Price: {{this.price.amount}}€/{{this.price.unit}}</p>
-      <p>{{/each}}</p>
     </div>
+      {{/each}}
   </div>
 </section>

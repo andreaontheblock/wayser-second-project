@@ -43,7 +43,7 @@ body {
 /* ---- layout: header ---- */
 
 .header {
-  background-color: white;
+  background-color: #f2ab59;
   border-bottom: 1px solid rgb(170, 168, 168);
   position: fixed;
   width: 100vw;
@@ -74,6 +74,14 @@ a {
 
 .links-current-user {
   display: flex;
+}
+
+.logo img {
+  width: 90px;
+  height: 65px;
+  margin-bottom: -20px;
+  margin-top:-20px;
+  margin-left:-20px;
 }
 
 /* ---- components: header ---- */
