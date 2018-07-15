@@ -10,7 +10,8 @@
       </div>
       <div class="field" >
         <label>Category:</label>
-        <select name="category">
+        <select class="select-category" name="category">
+          <option value="" disabled selected>Please select a category</option>
           <option>Education</option>
           <option>Technology</option>
           <option>Health Care</option>
@@ -27,11 +28,12 @@
         <textarea name="description" rows="10" cols="54">
         </textarea>
       </div>
-      <div class="field" >
+      <div class="field-price" >
         <label>Price(€):</label>
         <input type="number" name="priceNumber"/>
         <span>/</span>
-        <select name="priceText">
+        <select class="select-price-unit" name="priceText">
+          <option value="" disabled selected>Please select a unit</option>
           <option>hour</option>
           <option>day</option>
           <option>week</option>
@@ -41,7 +43,7 @@
         </select>
       </div>
       <div class="field submit">
-        <button type="submit">Save</button>
+        <button class="service-added-btn" type="submit">SAVE SERVICE</button>
       </div>
     </form>
 
