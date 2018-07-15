@@ -11,26 +11,28 @@
 
 <body>
   <header class="header"> 
-  {{#unless currentUser}}
     <nav class="nav-bar container">
       <div class="logo">
         <img src="" alt="LOGO">
       </div>
+      {{#unless currentUser}}
       <ul class="links-auth">
         <li><a href="/auth/signup">Sign up</a></li>
         <li><a href="/auth/login">Log in</a></li>
       </ul>
+      {{/unless}}
+      {{#if currentUser}}
+      <div class="links-current-user">
+        <form method="POST" action="/auth/logout">
+          <button class="log-out-btn">Log out</button>
+        </form> 
+        <a href="/profile">Profile</a>
+      </div>
+      {{/if}}
     </nav>
-  {{/unless}}
-  
-  {{#if currentUser}}
-  <p>Logged in as {{currentUser.username}}</p>
-  <form method="POST" action="/auth/logout">
-    <button>logout</button>
-  </form> 
-  <a href="/profile"> Your Profile</a>
-  {{/if}}
   </header>
+
+  {{!-- <p>Logged in as {{currentUser.username}}</p> --}}
 
   {{{body}}}
 
