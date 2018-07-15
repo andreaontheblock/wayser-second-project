@@ -1,49 +1,50 @@
+<div class="create-service-container">
 
-<h1>Please provide a service</h1>
+  <section class="container">
 
-<form method="POST" action="/profile/create-service">
+    <h1>Adding a service</h1>
+    <form method="POST" action="/profile/create-service">
+      <div class="field" >
+        <label>Service title:</label>
+        <input type="text" name="job"/>
+      </div>
+      <div class="field" >
+        <label>Category:</label>
+        <select name="category">
+          <option>Education</option>
+          <option>Technology</option>
+          <option>Health Care</option>
+          <option>Transportation</option>
+          <option>Social Services</option>
+          <option>Maintenance</option>
+          <option>Business</option>
+          <option>Tourism</option>
+          <option>Others</option>
+        </select>
+      </div>
+      <div class="field" >
+        <label>Description:</label>
+        <textarea name="description" rows="10" cols="54">
+        </textarea>
+      </div>
+      <div class="field" >
+        <label>Price(€):</label>
+        <input type="number" name="priceNumber"/>
+        <span>/</span>
+        <select name="priceText">
+          <option>hour</option>
+          <option>day</option>
+          <option>week</option>
+          <option>month</option>
+          <option>year</option>
+          <option>lesson</option>
+        </select>
+      </div>
+      <div class="field submit">
+        <button type="submit">Save</button>
+      </div>
+    </form>
 
-  <div class="field" >
-    <label>Job title</label>
-    <input type="text" name="job"/>
-  </div>
+  </section>
 
-  <div class="field" >
-    <label>Category</label>
-    <select name="category">
-      <option>Education</option>
-      <option>Technology</option>
-      <option>Health Care</option>
-      <option>Transportation</option>
-      <option>Social Services</option>
-      <option>Maintenance</option>
-      <option>Business</option>
-      <option>Tourism</option>
-      <option>Others</option>
-    </select>
-  </div>
-
- <div class="field" >
-    <label>Description</label>
-    <textarea name="description" rows="10" cols="50">
-    </textarea>
-  </div>
-
-   <div class="field" >
-    <label>Price (€)</label>
-    <input type="number" name="priceNumber"/>
-    <span>/</span>
-    <select name="priceText">
-      <option>hour</option>
-      <option>day</option>
-      <option>week</option>
-      <option>month</option>
-      <option>year</option>
-      <option>lesson</option>
-    </select>
-  </div>
-
-  <div class="field submit">
-    <button type="submit">Save</button>
-  </div>
-</form>
+</div>
