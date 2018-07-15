@@ -40,9 +40,9 @@ const users = [
     email: 'will@will.com'
   },
   {
-    username: 'Sebas',
-    password: bcrypt.hashSync('sebas', salt).toString(),
-    email: 'sebas@sebas.com'
+    username: 'Julio',
+    password: bcrypt.hashSync('julio', salt).toString(),
+    email: 'julio@julio.com'
   },
   {
     username: 'Daniela',
@@ -53,6 +53,21 @@ const users = [
     username: 'Gabriel',
     password: bcrypt.hashSync('gabriel', salt).toString(),
     email: 'gabriel@gabriel.com'
+  },
+  {
+    username: 'Khalil',
+    password: bcrypt.hashSync('khalil', salt).toString(),
+    email: 'khalil@khalil.com'
+  },
+  {
+    username: 'Sebastian',
+    password: bcrypt.hashSync('sebastian', salt).toString(),
+    email: 'sebastian@sebastian.com'
+  },
+  {
+    username: 'Julien',
+    password: bcrypt.hashSync('julien', salt).toString(),
+    email: 'julien@julien.com'
   }
 ];
 
@@ -143,6 +158,51 @@ User.create(users)
         name: 'Donald Trump Impersonator',
         category: 'Others',
         provider: usersIds[7],
+        price: {
+          amount: '20',
+          unit: 'hour'
+        }
+      },
+      {
+        name: 'Tennis Trainer',
+        category: 'Education',
+        provider: usersIds[0],
+        price: {
+          amount: '35',
+          unit: 'lesson'
+        }
+      },
+      {
+        name: 'Dog Walker',
+        category: 'Others',
+        provider: usersIds[8],
+        price: {
+          amount: '8',
+          unit: 'hour'
+        }
+      },
+      {
+        name: 'Plumber',
+        category: 'Maintenance',
+        provider: usersIds[9],
+        price: {
+          amount: '15',
+          unit: 'hour'
+        }
+      },
+      {
+        name: 'Electrician',
+        category: 'Maintenance',
+        provider: usersIds[10],
+        price: {
+          amount: '20',
+          unit: 'hour'
+        }
+      },
+      {
+        name: 'Plumber',
+        category: 'Maintenance',
+        provider: usersIds[5],
         price: {
           amount: '20',
           unit: 'hour'
