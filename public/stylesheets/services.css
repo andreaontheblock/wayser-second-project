@@ -1,0 +1,14 @@
+/* ---- layout: services page ---- */
+
+.services-section {
+  margin-top: 58px;
+  height: 100vh;
+  background-color: #124075d3;
+}
+
+.services-section h1 {
+  text-align: center;
+  font-size: 2rem;
+  padding-top: 8vh;
+  padding-bottom: 10px;
+}
