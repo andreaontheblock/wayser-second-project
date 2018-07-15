@@ -155,6 +155,50 @@ a {
   margin-bottom: 10px;
 }
 
+/* ---- layout: login page ---- */
+
+.login-section {
+  margin-top: 58px;
+  background-image: url('/images/background-login.png');
+  background-size: cover;
+  height: 100vh;
+}
+
+.credentials-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.credentials-container input {
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.login-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* ---- components: login page ---- */
+
+.credentials-input,
+.login-btn {
+  font-size: 1em;
+  font-family: inherit;
+  border: 1px solid grey;
+  border-radius: 4px;
+  width: 70%;
+  padding: 15px; 
+}
+
+.login-btn {
+  color: white;
+  background-color: #124075d3;
+  margin-top: 30px;
+}
+
 /* ---- layout: footer ---- */
 
 .footer {
