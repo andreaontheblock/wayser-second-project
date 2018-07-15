@@ -176,7 +176,14 @@ a {
 .signup-section h1 {
   text-align: center;
   font-size: 2rem;
+}
+
+.login-section h1 {
   padding-top: 15vh;
+}
+
+.signup-section h1 {
+  padding-top: 10vh;
 }
 
 .credentials-container {
