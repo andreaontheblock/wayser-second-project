@@ -155,16 +155,25 @@ a {
   margin-bottom: 10px;
 }
 
-/* ---- layout: login page ---- */
+/* ---- layout: login page / signup page ---- */
 
-.login-section {
+.login-section,
+.signup-section {
   margin-top: 58px;
-  background-image: url('/images/background-login.png');
   background-size: cover;
   height: 100vh;
 }
 
-.login-section h1 {
+.login-section {
+  background-image: url('/images/background-login.png');
+}
+
+.signup-section {
+  background-image: url('/images/background-signup.jpg');
+}
+
+.login-section h1,
+.signup-section h1 {
   text-align: center;
   font-size: 2rem;
   padding-top: 15vh;
@@ -182,7 +191,8 @@ a {
   margin-bottom: 10px;
 }
 
-.login-btn-container {
+.login-btn-container,
+.signup-btn-container {
   display: flex;
   justify-content: center;
 }
@@ -190,7 +200,8 @@ a {
 /* ---- components: login page ---- */
 
 .credentials-input,
-.login-btn {
+.login-btn,
+.signup-btn {
   font-size: 1em;
   font-family: inherit;
   border: 1px solid grey;
@@ -199,7 +210,8 @@ a {
   padding: 15px; 
 }
 
-.login-btn {
+.login-btn,
+.signup-btn {
   color: white;
   background-color: #124075d3;
   margin-top: 30px;

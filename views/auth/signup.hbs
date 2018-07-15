@@ -1,27 +1,27 @@
-<form id="form" action="/auth/signup" method="POST">
+<div class="signup-section">
+  
+  <section class="container">
 
-  <h1>SIGN UP BABY IT'S FREE</h1>
+    <form id="form" action="/auth/signup" method="POST">
+      <h1>Sign Up</h1>
+      <div class="credentials-container">
+        <label for="username">Username:</label>
+        <input class="credentials-input" type="text" name="username" placeholder="e.g. andreaontheblock">
+        <label for="password">Password:</label>
+        <input class="credentials-input" type="password" name="password" placeholder="e.g. Securepassword12">
+        <label for="email">Email:</label>
+        <input class="credentials-input" type="text" name="email" placeholder="e.g. andrea@andrea.com">
+      </div>
+      <div class="signup-btn-container">
+        <button>Create account</button>
+      </div>
+      {{#if messages.length}}
+      <ul class="validation">
+        {{#each messages}}<li>{{this}}</li>{{/each}}
+      </ul>
+      {{/if}}
+    </form>
 
-  <div class="field" >
-    <label for="username">Username</label>
-    <input type="text" name="username" placeholder="ej: andreaontheblock">
-  </div>
+  </section>
 
-  <div class="field" >
-    <label for="password">Password</label>
-    <input type="password" name="password" placeholder="ej: Securepasword12">
-  </div>
-
-  <div class="field" >
-    <label for="email">Email</label>
-    <input type="text" name="email" placeholder="ej: andrea@andrea.com">
-  </div>
-
-  <button>Create account</button>
-  {{#if messages.length}}
-  <ul class="validation">
-    {{#each messages}}<li>{{this}}</li>{{/each}}
-  </ul>
-  {{/if}}
-
-</form>
+</div>
