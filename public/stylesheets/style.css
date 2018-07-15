@@ -76,6 +76,13 @@ a {
 .index-page {
   background-color: #71c6eed3;
   padding-top: 58px;
+  height: 100vh;
+}
+
+.img-bg {
+  background-image: url('/images/laptop-img2.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .type-yourself-section, 
@@ -100,6 +107,7 @@ a {
 .category-btns {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 /* ---- components: index page ---- */
@@ -116,19 +124,20 @@ a {
 .service-input {
   width: 100%;
   padding: 15px;
+  margin-bottom: 30px;
 }
 
 .search-btn {
   background-color: rgb(18, 74, 121);
   color: white;
+  margin-bottom: 30px;
 }
 
 .category-btns button {
   background-color: white;
   padding: 5px;
-  margin: 5px;
-  width: 40vw;
-
+  width: 42vw;
+  margin-bottom: 10px;
 }
 
 /* ---- layout: footer ---- */
