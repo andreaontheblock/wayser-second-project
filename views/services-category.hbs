@@ -11,7 +11,10 @@
     <article class="card-container">
       {{#each services}}
       <div class= "card">
-        <div class="card-img"></div>
+        <div class="card-top">
+          <div class="card-img"></div>
+          <a href="/services/{{this._id}}"><button>Details</button></a>
+        </div>
         <h4>{{this.name}}</h4>
         <p>{{this.price.amount}}€/{{this.price.unit}}</p>
         <p>{{this.provider.username}}</p>
