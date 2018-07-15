@@ -7,22 +7,28 @@ const Service = require('../models/service');
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
-  res.send('respond with a resource');
-});
-
-// UWU refactor when we have time
-router.get('/:category', function (req, res, next) {
-  const serviceCategory = req.params.category;
-  let correctServiceCategory = serviceCategory.charAt(0).toUpperCase() + serviceCategory.substr(1); // UWU SUPER GREAT CODE IN ONE FUKIN LINE!!
-  if (correctServiceCategory.includes('-')) {
-    correctServiceCategory = correctServiceCategory.replace(/-/, ' ');
-    let array = correctServiceCategory.split(' ');
-    let arrayUpperCased = array[1].charAt(0).toUpperCase() + array[1].substr(1);
-    array[1] = arrayUpperCased;
-    correctServiceCategory = array.join(' ');
+  const criteria = {};
+  if (req.query.cat) {
+    // @todo if (invalid category) { return next() }
+    const serviceCategory = req.query.cat;
+    let correctServiceCategory = serviceCategory.charAt(0).toUpperCase() + serviceCategory.substr(1); // UWU SUPER GREAT CODE IN ONE FUKIN LINE!!
+    // @todo refactor
+    if (correctServiceCategory.includes('-')) {
+      correctServiceCategory = correctServiceCategory.replace(/-/, ' ');
+      let array = correctServiceCategory.split(' ');
+      let arrayUpperCased = array[1].charAt(0).toUpperCase() + array[1].substr(1);
+      array[1] = arrayUpperCased;
+      correctServiceCategory = array.join(' ');
+    }
+    criteria.category = correctServiceCategory;
   }
 
-  Service.find({category: correctServiceCategory}).populate('provider') // UWU buscar users by category e.g. 'technology'
+  if (req.query.terms) {
+    // @todo google query mongoose string contains
+    criteria['$reg'] = {name: req.query.terms};
+  }
+
+  Service.find(criteria).populate('provider') // UWU buscar users by category e.g. 'technology'
     .then((services) => {
       res.render('services-category', {services: services});
     })
