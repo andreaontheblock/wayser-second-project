@@ -1,29 +1,29 @@
-<h1>WAYSER</h1>
-<h2>What are you looking for?</h2>
+<div class="index-page">
 
-{{!-- GET pq esta buscando pero no cambiando base de datos --}}
-<form method="GET" action="/services">
+  <section class="type-yourself-section container">
+    <h1>WAYSER</h1>
+    <p>"The best way to acquire a service"</p>
+    <form method="GET" action="/services"> {{!-- GET pq esta buscando pero no cambiando base de datos --}}
+      <div class="search-field" >
+        <input class="service-input" type="text" name="search" placeholder="What service do you need?"/>
+        <button class="search-btn" type="submit">Search</button>
+      </div>
+    </form>
+  </section>
 
-  <div class="field" >
-    <input type="text" name="search" placeholder="Type the service you need"/>
-  </div>
+  <section class="click-categories-section container">
+    <p>Looking for a specific category?</p>
+    <div class="category-btns">
+      <a href="/services/education"><button>Education</button></a> {{!-- NO ES DRY PERO LA MONTSE MANDA --}}
+      <a href="/services/technology"><button>Technology</button></a>
+      <a href="/services/health-care"><button>Health Care</button></a>
+      <a href="/services/transportation"><button>Transportation</button></a>
+      <a href="/services/social-services"><button>Social Services</button></a>
+      <a href="/services/maintenance"><button>Maintenance</button></a>
+      <a href="/services/business"><button>Business</button></a>
+      <a href="/services/tourism"><button>Tourism</button></a>
+      <a href="/services/others"><button>Others</button></a>
+    </div>
+  </section>
 
-  <div class="field submit">
-    <button type="submit">Search</button>
-  </div>
-
-</form>
-
-<h3>Hola papu.. looking for a specific category?</h3>
-{{!-- NO ES DRY PERO LA MONTSE MANDA --}}
-
-<a href="/services/education">Education</a>
-<a href="/services/technology">Technology</a>
-<a href="/services/health-care">Health Care</a>
-<a href="/services/transportation">Transportation</a>
-<a href="/services/social-services">Social Services</a>
-<a href="/services/maintenance">Maintenance</a>
-<a href="/services/business">Business</a>
-<a href="/services/tourism">Tourism</a>
-<a href="/services/others">Others</a>
-
+</div>  

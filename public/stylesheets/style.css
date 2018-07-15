@@ -12,6 +12,14 @@ body {
   padding: 0;
 }
 
+/* ---- typography ---- */
+
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 147%;
+}
+
 /* ---- main layout ---- */
 
 .container {
@@ -54,6 +62,75 @@ a {
   display: flex;
 }
 
+/* ---- components: header ---- */
+
+.log-out-btn {
+  font-size: 16px;
+  font-family: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+/* ---- layout: index page ---- */
+
+.index-page {
+  background-color: #71c6eed3;
+  padding-top: 58px;
+}
+
+.type-yourself-section, 
+.click-categories-section {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.type-yourself-section h1,
+.type-yourself-section p {
+  margin: 0;
+}
+
+.type-yourself-section p {
+  padding-bottom: 50px;
+}
+
+.search-field {
+  display: flex;
+}
+
+.category-btns {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* ---- components: index page ---- */
+
+.service-input,
+.search-btn,
+.category-btns button {
+  font-size: 1em;
+  font-family: inherit;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+
+.service-input {
+  width: 100%;
+  padding: 15px;
+}
+
+.search-btn {
+  background-color: rgb(18, 74, 121);
+  color: white;
+}
+
+.category-btns button {
+  background-color: white;
+  padding: 5px;
+  margin: 5px;
+  width: 40vw;
+
+}
+
 /* ---- layout: footer ---- */
 
 .footer {
@@ -67,21 +144,4 @@ a {
   bottom: 0;
   text-align: center;
   padding: 10px 0;
-}
-
-/* ---- components ---- */
-
-.log-out-btn {
-  font-size: 16px;
-  font-family: inherit;
-  padding: 0;
-  margin: 0;
-}
-
-/* ---- typography ---- */
-
-body {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 147%;
 }
