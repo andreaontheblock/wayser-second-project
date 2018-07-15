@@ -1,0 +1,63 @@
+/* ---- layout: login page / signup page ---- */
+
+.login-section,
+.signup-section {
+  margin-top: 58px;
+  background-size: cover;
+  height: 100vh;
+}
+
+.login-section {
+  background-image: url('/images/background-login.png');
+}
+
+.signup-section {
+  background-image: url('/images/background-signup.jpg');
+}
+
+.login-section h1,
+.signup-section h1 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.login-section h1 {
+  padding-top: 15vh;
+}
+
+.signup-section h1 {
+  padding-top: 10vh;
+}
+
+.credentials-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.credentials-container input {
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.login-btn-container,
+.signup-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* ---- components: login / signup page ---- */
+
+.credentials-input,
+.login-btn,
+.signup-btn {
+  width: 70%;
+}
+
+.login-btn,
+.signup-btn {
+  color: white;
+  background-color: #124075d3;
+  margin-top: 30px;
+}

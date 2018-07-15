@@ -1,0 +1,101 @@
+/* ---- reset ---- */
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* ---- typography ---- */
+
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 147%;
+}
+
+/* ---- main layout ---- */
+
+.container {
+  margin: 0 20px;
+}
+
+/* ---- general components ---- */
+
+.credentials-input,
+.login-btn,
+.signup-btn,
+.adding-service button,
+.service-added-btn {
+  font-size: inherit;
+  font-family: inherit;
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 15px;
+}
+
+/* ---- layout: header ---- */
+
+.header {
+  background-color: white;
+  border-bottom: 1px solid rgb(170, 168, 168);
+  position: fixed;
+  width: 100vw;
+  top: 0;
+}
+
+.nav-bar {
+  padding: 20px 0 15px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.links-auth {
+  margin: 0;
+  padding: 0;
+}
+
+.links-auth li, 
+.links-current-user a {
+  display: inline;
+  padding-left: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.links-current-user {
+  display: flex;
+}
+
+/* ---- components: header ---- */
+
+.log-out-btn {
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+/* ---- layout: footer ---- */
+
+.footer {
+  background-color: #343a40;
+  color: rgba(255, 255, 255, 0.63);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 12px;
+  border-top: 1px solid rgb(170, 168, 168);
+  position: fixed;
+  width: 100vw;
+  bottom: 0;
+  text-align: center;
+  padding: 10px 0;
+}

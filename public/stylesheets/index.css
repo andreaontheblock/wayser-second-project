@@ -1,0 +1,82 @@
+/* ---- layout: index page ---- */
+
+.index-page {
+  background-color: #124075d3;
+  padding-top: 58px;
+  height: 100vh;
+}
+
+.img-bg {
+  background-image: url('/images/laptop-img2.jpeg');
+  background-size: cover;
+}
+
+.type-yourself-section {
+  text-align: center;
+  padding-top: 70px;
+}
+
+.type-yourself-section h1,
+.type-yourself-section p {
+  margin: 0;
+}
+
+.type-yourself-section p {
+  padding-bottom: 50px;
+}
+
+.search-field {
+  display: flex;
+}
+
+/* .wayser-slogan {
+  width: 335px;
+  margin: 0 auto;
+  height: 15vh;
+  position: absolute;
+  top: 15%;
+  background-color: grey;
+  opacity: 0.6;
+} */
+
+.click-categories-section {
+  padding-top: 20px;
+  color: white;
+  text-align: center;
+}
+
+.category-btns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* ---- components: index page ---- */
+
+.service-input,
+.search-btn,
+.category-btns button {
+  font-size: 1em;
+  font-family: inherit;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+
+.service-input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.search-btn {
+  background-color: #124075d3;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.category-btns button {
+  background-color: white;
+  padding: 5px;
+  width: 42vw;
+  margin-bottom: 10px;
+}
