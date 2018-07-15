@@ -16,6 +16,11 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/create-service', (req, res, next) => {
+  const currentUser = req.session.currentUser;
+  if (!currentUser) {
+    res.redirect('/');
+    return;
+  }
   res.render('create-service');
 });
 
