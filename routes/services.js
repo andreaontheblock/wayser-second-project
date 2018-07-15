@@ -7,7 +7,7 @@ const Service = require('../models/service');
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
-  let criteria = '';
+  const filter = {};
 
   if (req.query.cat) {
     // @todo if (invalid category) { return next() }
@@ -21,27 +21,22 @@ router.get('/', function (req, res, next) {
       array[1] = arrayUpperCased;
       correctServiceCategory = array.join(' ');
     }
-    criteria = correctServiceCategory;
-
-    Service.find({category: criteria}).populate('provider')
-      .then((services) => {
-        res.render('services-category', {services: services});
-      })
-      .catch(next);
-
-    return;
+    filter.category = correctServiceCategory;
   }
 
   if (req.query.terms) {
-    criteria = req.query.terms;
-    Service.find({name: {$regex: new RegExp(criteria), $options: 'i'}}).populate('provider');
-    console.log(new RegExp(criteria))
-      .then((services) => {
-        console.log(services, 'hello');
-        res.render('services-category', {services: services});
-      })
-      .catch(next);
+    filter.name = {
+      $regex: new RegExp(req.query.terms),
+      $options: 'i'
+    };
   }
+
+  Service.find(filter).populate('provider')
+    .then((services) => {
+      console.log(services, 'hello');
+      res.render('services-category', {services: services});
+    })
+    .catch(next);
 });
 
 module.exports = router;
