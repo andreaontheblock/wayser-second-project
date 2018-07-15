@@ -12,11 +12,13 @@ body {
   padding: 0;
 }
 
-/* ---- layout ---- */
+/* ---- main layout ---- */
 
 .container {
   margin: 0 20px;
 }
+
+/* ---- layout: header ---- */
 
 .header{
   background-color: white;
@@ -50,6 +52,21 @@ a {
 
 .links-current-user {
   display: flex;
+}
+
+/* ---- layout: footer ---- */
+
+.footer {
+  background-color: #343a40;
+  color: rgba(255, 255, 255, 0.63);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 12px;
+  border-top: 1px solid rgb(170, 168, 168);
+  position: fixed;
+  width: 100vw;
+  bottom: 0;
+  text-align: center;
+  padding: 10px 0;
 }
 
 /* ---- components ---- */
