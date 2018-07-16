@@ -4,6 +4,7 @@ const express = require('express');
 const router = express.Router();
 // const User = require('../models/user');
 const Service = require('../models/service');
+const isUserLoggedIn = require('../middlewares/isUserLoggedIn');
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
@@ -15,16 +16,11 @@ router.get('/', (req, res, next) => {
   res.render('profile', {currentUser: currentUser});
 });
 
-router.get('/create-service', (req, res, next) => {
-  const currentUser = req.session.currentUser;
-  if (!currentUser) {
-    res.redirect('/');
-    return;
-  }
+router.get('/create-service', isUserLoggedIn, (req, res, next) => {
   res.render('create-service');
 });
 
-router.post('/create-service', (req, res, next) => {
+router.post('/create-service', isUserLoggedIn, (req, res, next) => {
   console.log(req.body);
 
   const newService = new Service({

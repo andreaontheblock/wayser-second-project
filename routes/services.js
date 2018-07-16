@@ -44,6 +44,7 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/:serviceId', isIdValid, (req, res, next) => {
+  // if user is not logged in ----> cannots see details
   const serviceId = req.params.serviceId;
   Service.findById(serviceId).populate('provider')
     .then((service) => {
