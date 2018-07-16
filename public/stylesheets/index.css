@@ -7,7 +7,7 @@
 }
 
 .img-bg {
-  background-image: url('/images/nurse.jpg');
+  background-image: url('/images/mechanic-2.jpg');
   background-size: cover;
 }
 
@@ -71,7 +71,7 @@
 }
 
 .search-btn {
-  background-color: cornflowerblue;
+  background-color: #F2B379;
   color: white;
   margin-bottom: 30px;
 }
