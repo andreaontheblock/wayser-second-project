@@ -7,9 +7,7 @@ const ObjectId = Schema.Types.ObjectId;
 const serviceSchema = new Schema({
   name: {type: String, required: true},
   category: {type: String, enum: ['Education', 'Technology', 'Health Care', 'Transportation', 'Social Services', 'Maintenance', 'Business', 'Tourism', 'Others'], required: true},
-
   provider: {type: ObjectId, ref: 'User'},
-
   price: {
     amount: {type: String, required: true},
     unit: {
@@ -17,7 +15,8 @@ const serviceSchema = new Schema({
       enum: ['hour', 'day', 'week', 'month', 'year', 'lesson'],
       required: true
     }
-  }
+  },
+  description: {type: String}
 });
 
 const Service = mongoose.model('Service', serviceSchema);

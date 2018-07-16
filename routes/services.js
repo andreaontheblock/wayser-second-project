@@ -37,6 +37,7 @@ router.get('/', function (req, res, next) {
 
   Service.find(filter).populate('provider')
     .then((services) => {
+      console.log('hello');
       res.render('services-category', {services: services});
     })
     .catch(next);

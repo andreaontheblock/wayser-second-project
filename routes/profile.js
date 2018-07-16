@@ -26,7 +26,8 @@ router.post('/create-service', isUserLoggedIn, (req, res, next) => {
     price: {
       amount: req.body.priceNumber,
       unit: req.body.priceText
-    }
+    },
+    description: req.body.description
   });
 
   newService.save()
