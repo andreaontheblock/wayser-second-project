@@ -6,6 +6,8 @@
   height: 100%;
   background-color: #F39477;
   color: black;
+  /* display: flex;
+  justify-content:space-evenly; */
 }
 
 .profile-section h1 {
@@ -25,8 +27,14 @@
 }
 
 .service-container {
-  border: 25px solid white;
   margin-bottom: 20px;
+  background-color: white;
+  padding: 10px;
+}
+
+.service-profile-list {
+  list-style: none;
+  padding-left: 0;
 }
 
 /* ---- components: profile page ---- */
