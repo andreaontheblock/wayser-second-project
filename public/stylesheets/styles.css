@@ -34,7 +34,8 @@ body {
 .signup-btn,
 .adding-service button,
 .service-added-btn,
-.back-home-btn {
+.back-home-btn,
+.go-back-btn {
   font-size: inherit;
   font-family: inherit;
   border: 1px solid grey;

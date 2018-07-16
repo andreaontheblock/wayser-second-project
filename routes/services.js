@@ -47,6 +47,10 @@ router.get('/', function (req, res, next) {
     .catch(next);
 });
 
+// router.get('/montse', (req, res, next) => {
+//   res.redirect(req.session.backURL || '/');
+// });
+
 router.get('/:serviceId', isIdValid, (req, res, next) => {
   if (!req.session.currentUser) {
     res.render('auth/signup');

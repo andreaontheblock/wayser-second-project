@@ -47,6 +47,11 @@ app.use(session({
   }
 }));
 
+// app.use((req, res, next) => {
+//   req.session.backURL = req.header('Referrer');
+//   next();
+// });
+
 app.use(flash());
 
 app.use(function (req, res, next) {
