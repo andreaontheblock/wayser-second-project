@@ -6,18 +6,18 @@ const bcrypt = require('bcrypt');
 const validator = require('validator'); // Package email validator
 
 const User = require('../models/user');
-const isUserLoggedIn = require('../middlewares/isUserLoggedIn');
+const isUserLoggedOut = require('../middlewares/isUserLoggedOut');
 const saltRounds = 10;
 
 // the routes to render the form is /auth/signup
-router.get('/signup', isUserLoggedIn, (req, res, next) => {
+router.get('/signup', isUserLoggedOut, (req, res, next) => {
   const data = {
     messages: req.flash('signup-error')
   };
   res.render('auth/signup', data);
 });
 
-router.post('/signup', isUserLoggedIn, (req, res, next) => {
+router.post('/signup', isUserLoggedOut, (req, res, next) => {
   if (!req.body.username || !req.body.password || !req.body.email) {
     req.flash('signup-error', 'Please complete all fields');
     res.redirect('/auth/signup');
@@ -65,14 +65,14 @@ router.post('/signup', isUserLoggedIn, (req, res, next) => {
     .catch(next);
 });
 
-router.get('/login', isUserLoggedIn, (req, res, next) => {
+router.get('/login', isUserLoggedOut, (req, res, next) => {
   const data = {
     messages: req.flash('login-error')
   };
   res.render('auth/login', data);
 });
 
-router.post('/login', isUserLoggedIn, (req, res, next) => {
+router.post('/login', isUserLoggedOut, (req, res, next) => {
   if (!req.body.username || !req.body.password) {
     req.flash('login-error', 'Please provide a username and password');
     res.redirect('/auth/login');

@@ -2,17 +2,13 @@
 
 const express = require('express');
 const router = express.Router();
-// const User = require('../models/user');
+
 const Service = require('../models/service');
 const isUserLoggedIn = require('../middlewares/isUserLoggedIn');
 
 /* GET home page. */
-router.get('/', (req, res, next) => {
+router.get('/', isUserLoggedIn, (req, res, next) => {
   const currentUser = req.session.currentUser;
-  if (!currentUser) {
-    res.redirect('/');
-    return;
-  }
   res.render('profile', {currentUser: currentUser});
 });
 
