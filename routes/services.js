@@ -37,7 +37,11 @@ router.get('/', function (req, res, next) {
 
   Service.find(filter).populate('provider')
     .then((services) => {
-      console.log('hello');
+      if (services.length === 0) {
+        res.status(404);
+        res.render('not-found');
+        return next;
+      }
       res.render('services-category', {services: services});
     })
     .catch(next);
