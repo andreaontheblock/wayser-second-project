@@ -43,7 +43,7 @@ body {
 /* ---- layout: header ---- */
 
 .header {
-  background-color: #56242e;
+  background-color: #E2636E;
   border-bottom: 1px solid rgb(170, 168, 168);
   position: fixed;
   width: 100vw;
@@ -69,7 +69,7 @@ body {
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: white;
 }
 
 .links-current-user {
@@ -77,11 +77,11 @@ a {
 }
 
 .logo img {
-  width: 90px;
-  height: 65px;
-  margin-bottom: -20px;
-  margin-top:-20px;
-  margin-left:-20px;
+  width: 70px;
+  height: 45px;
+  margin-bottom: -15px;
+  margin-top:-25px;
+  margin-left:-10px;
 }
 
 /* ---- components: header ---- */
@@ -105,5 +105,5 @@ a {
   width: 100vw;
   bottom: 0;
   text-align: center;
-  padding: 10px 0;
+  /* padding: 10px 0; */
 }
