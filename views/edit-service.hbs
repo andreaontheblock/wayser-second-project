@@ -1,0 +1,50 @@
+<div class="create-service-container">
+
+  <section class="container">
+    <h1>Editing a service</h1>
+    <form method="POST" action="/profile/create-service">
+      <div class="field" >
+        <label>Service title:</label>
+        <input type="text" name="job" value="{{service.name}}"/>
+      </div>
+      <div class="field" >
+        <label>Category:</label>
+        <select class="select-category" name="category">
+          <option value="" disabled selected>{{service.category}}</option>
+          <option>Education</option>
+          <option>Technology</option>
+          <option>Health Care</option>
+          <option>Transportation</option>
+          <option>Social Services</option>
+          <option>Maintenance</option>
+          <option>Business</option>
+          <option>Tourism</option>
+          <option>Others</option>
+        </select>
+      </div>
+      <div class="field" >
+        <label>Description:</label>
+        <textarea name="description" rows="10" cols="54">{{service.description}}</textarea>
+      </div>
+      <div class="field-price" >
+        <label>Price(€):</label>
+        <input type="number" name="priceNumber" value="{{service.price.amount}}"/>
+        <span>/</span>
+        <select class="select-price-unit" name="priceText">
+          <option value="" disabled selected>{{service.price.unit}}</option>
+          <option>hour</option>
+          <option>day</option>
+          <option>week</option>
+          <option>month</option>
+          <option>year</option>
+          <option>lesson</option>
+        </select>
+      </div>
+      <div class="field submit">
+        <button class="service-added-btn" type="submit">SAVE SERVICE</button>
+      </div>
+    </form>
+
+  </section>
+
+</div>

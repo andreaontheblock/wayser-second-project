@@ -45,4 +45,13 @@ router.post('/create-service', isUserLoggedIn, (req, res, next) => {
     .catch(next);
 });
 
+router.get('/edit/:serviceId', (req, res, next) => {
+  Service.findById(req.params.serviceId).populate('provider')
+    .then((service) => {
+      console.log(service);
+      res.render('edit-service', {service: service});
+    })
+    .catch(next);
+});
+
 module.exports = router;
