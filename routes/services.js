@@ -5,6 +5,7 @@ const router = express.Router();
 
 const Service = require('../models/service');
 const isIdValid = require('../middlewares/isIdValid');
+const isUserLoggedIn = require('../middlewares/isUserLoggedIn');
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
@@ -44,7 +45,11 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/:serviceId', isIdValid, (req, res, next) => {
-  // if user is not logged in ----> cannots see details
+  if (!req.session.currentUser) {
+    res.render('auth/signup');
+    return;
+  }
+
   const serviceId = req.params.serviceId;
   Service.findById(serviceId).populate('provider')
     .then((service) => {
