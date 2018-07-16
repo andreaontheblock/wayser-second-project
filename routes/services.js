@@ -14,7 +14,7 @@ router.get('/', function (req, res, next) {
     if (predefinedCategories.find(item => item === req.query.cat)) {
       const serviceCategory = req.query.cat;
       let correctServiceCategory = serviceCategory.charAt(0).toUpperCase() + serviceCategory.substr(1); // UWU SUPER GREAT CODE IN ONE FUKIN LINE!!
-      // @todo refactor
+      // @todo
       if (correctServiceCategory.includes('-')) {
         correctServiceCategory = correctServiceCategory.replace(/-/, ' ');
         let array = correctServiceCategory.split(' ');
@@ -24,8 +24,7 @@ router.get('/', function (req, res, next) {
       }
       filter.category = correctServiceCategory;
     } else {
-      res.render('search-not-found');
-      return;
+      return (next());
     }
   }
 
