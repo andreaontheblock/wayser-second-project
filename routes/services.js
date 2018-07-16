@@ -44,7 +44,7 @@ router.get('/', function (req, res, next) {
 
 router.get('/:serviceId', (req, res, next) => {
   const serviceId = req.params.serviceId;
-  Service.findById(serviceId)
+  Service.findById(serviceId).populate('provider')
     .then((service) => {
       res.render('service-details', {service: service});
     })
