@@ -8,11 +8,13 @@
 }
 
 .login-section {
-  background-image: url('/images/background-login.png');
+  /* background-image: url('/images/background-login.png'); */
+  background-color:#F39477;
 }
 
 .signup-section {
-  background-image: url('/images/background-login.png');
+  /* background-image: url('/images/background-login.png'); */
+  background-color: #F39477;
 }
 
 .login-section h1,
@@ -58,6 +60,6 @@
 .login-btn,
 .signup-btn {
   color: white;
-  background-color: #124075d3;
+  background-color: #F2B379;
   margin-top: 30px;
 }

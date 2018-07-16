@@ -1,13 +1,13 @@
 /* ---- layout: index page ---- */
 
 .index-page {
-  background-color: #9b0f3b;
+  background-color: #F39477;
   padding-top: 58px;
   height: 100vh;
 }
 
 .img-bg {
-  background-image: url('/images/mechanic-2.jpg');
+  /* background-image: url('/images/mechanic-3.jpg'); */
   background-size: cover;
 }
 
@@ -19,7 +19,7 @@
 .type-yourself-section h1,
 .type-yourself-section p {
   margin: 0;
-  color: white;
+  color: lightgoldenrodyellow;
   text-shadow: 1px 1px 2px black;
 }
 
