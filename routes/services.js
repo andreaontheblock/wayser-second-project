@@ -5,7 +5,6 @@ const router = express.Router();
 
 const Service = require('../models/service');
 const isIdValid = require('../middlewares/isIdValid');
-const isUserLoggedIn = require('../middlewares/isUserLoggedIn');
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
