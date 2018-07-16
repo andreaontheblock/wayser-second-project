@@ -45,4 +45,16 @@ router.post('/create-service', isUserLoggedIn, (req, res, next) => {
     .catch(next);
 });
 
+router.get('/edit', (req, res, next) => {
+  const user = {
+    provider: req.session.currentUser._id
+  };
+  Service.find(user).populate('provider')
+    .then((service) => {
+      console.log(service);
+      res.render('edit-service', {service: service});
+    })
+    .catch(next);
+});
+
 module.exports = router;
