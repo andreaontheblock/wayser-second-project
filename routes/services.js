@@ -37,9 +37,17 @@ router.get('/', function (req, res, next) {
 
   Service.find(filter).populate('provider')
     .then((services) => {
-      console.log('adsfa');
-
       res.render('services-category', {services: services});
+    })
+    .catch(next);
+});
+
+router.get('/:serviceId', (req, res, next) => {
+  const serviceId = req.params.serviceId;
+  Service.findById(serviceId)
+    .then((service) => {
+      console.log('yeah');
+      res.render('service-details', {service: service});
     })
     .catch(next);
 });
