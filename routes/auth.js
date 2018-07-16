@@ -6,16 +6,17 @@ const bcrypt = require('bcrypt');
 const validator = require('validator'); // Package email validator
 
 const User = require('../models/user');
+const isUserLoggedIn = require('../middlewares/isUserLoggedIn');
 
 const saltRounds = 10;
 
 // the routes to render the form ias /auth/signup
-router.get('/signup', (req, res, next) => {
-  if (req.session.currentUser) {
-    res.redirect('/');
-    // why return?? UWU PARA QUE PARE LA FUNCION, Y NO SIGA Y NO HAGA RENDER.
-    return;
-  }
+router.get('/signup', isUserLoggedIn, (req, res, next) => {
+  // if (req.session.currentUser) {
+  //   res.redirect('/');
+  //   // why return?? UWU PARA QUE PARE LA FUNCION, Y NO SIGA Y NO HAGA RENDER.
+  //   return;
+  // }
 
   const data = {
     messages: req.flash('signup-error')
