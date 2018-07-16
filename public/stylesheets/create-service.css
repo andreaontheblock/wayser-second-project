@@ -3,7 +3,7 @@
 .create-service-container {
   margin-top: 58px;
   height: 100vh;
-  background-color: #124075d3;
+  background-color: #F39477;
   color: white;
 }
 
@@ -40,7 +40,7 @@
 
 .service-added-btn {
   width: 100%;
-  background-color: rgba(206, 20, 75, 0.788);
+  background-color: #F2B379;
   color: white;
   margin-top: 30px;
 }

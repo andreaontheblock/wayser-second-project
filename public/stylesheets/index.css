@@ -19,8 +19,8 @@
 .type-yourself-section h1,
 .type-yourself-section p {
   margin: 0;
-  color: lightgoldenrodyellow;
-  text-shadow: 1px 1px 2px black;
+  color: white;
+  text-shadow: 2px 2px 0px black;
 }
 
 .type-yourself-section p {

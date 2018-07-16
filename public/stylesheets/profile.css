@@ -2,29 +2,30 @@
 
 .profile-section {
   margin-top: 58px;
+  /* height: 100%; doesn't work idk why */
   height: 100%;
-  background-color: #124075d3;
-  color: white;
+  background-color: #F39477;
+  color: black;
 }
 
 .profile-section h1 {
   text-align: center;
   font-size: 2rem;
-  padding-top: 8vh;
+  padding-top: 35px;
   padding-bottom: 10px;
 }
 
 .adding-service {
-  background-color: white;
+  /* background-color: white; */
   color: black;
   text-align: center;
-  margin-top: 8vh;
+  /* margin-top: 8vh;
   padding-top: 5vh;
-  padding-bottom: 6vh;
+  padding-bottom: 6vh; */
 }
 
 .service-container {
-  border: 1px solid white;
+  border: 25px solid white;
   margin-bottom: 20px;
 }
 
@@ -32,6 +33,6 @@
 
 .adding-service button {
   width: 42vw;
-  background-color: #124075d3;
+  background-color: #F2B379;
   color: white;
 }

@@ -3,6 +3,7 @@
 .services-section {
   margin-top: 58px;
   height: 100vh;
+  background-color: #F39477;
 }
 
 .services-section h1 {
@@ -51,6 +52,7 @@
   justify-content: space-between;
   align-items: flex-end;
   border-bottom: 1px solid grey;
+  background-color: white;
 }
 
 /* ---- components: services-category page ---- */
