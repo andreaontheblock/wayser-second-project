@@ -3,6 +3,12 @@
     <h1>Your Profile</h1>
     <p>Name: {{currentUser.username}}</p>
     <p>Email: {{currentUser.email}}</p>
+    <h2>Your Services:</h2>
+    <ol>
+    {{#each service}}
+      <li>{{this.name}}</li>
+    {{/each}}
+    </ol>
     <div class="adding-service">   
       <h3>Would you like to provide a service?</h3>
       <a href="/profile/create-service"><button>ADD SERVICE</button></a>

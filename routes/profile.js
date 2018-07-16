@@ -8,8 +8,16 @@ const isUserLoggedIn = require('../middlewares/isUserLoggedIn');
 
 /* GET home page. */
 router.get('/', isUserLoggedIn, (req, res, next) => {
-  const currentUser = req.session.currentUser;
-  res.render('profile', {currentUser: currentUser});
+  // const currentUser = req.session.currentUser;
+  const userId = {
+    provider: req.session.currentUser._id
+  };
+  Service.find(userId).populate('provider')
+    .then((service) => {
+      res.render('profile', {service: service});
+    })
+    .catch(next);
+  // res.render('profile', {currentUser: currentUser});
 });
 
 router.get('/create-service', isUserLoggedIn, (req, res, next) => {
