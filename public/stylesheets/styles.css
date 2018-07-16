@@ -32,7 +32,6 @@ body {
 .credentials-input,
 .login-btn,
 .signup-btn,
-.adding-service button,
 .service-added-btn,
 .back-home-btn,
 .go-back-btn {
@@ -47,7 +46,7 @@ body {
 /* ---- layout: header ---- */
 
 .header {
-  background-color: #E2636E;
+  background-color: white;
   border-bottom: 1px solid rgb(170, 168, 168);
   position: fixed;
   width: 100vw;
@@ -55,7 +54,7 @@ body {
 }
 
 .nav-bar {
-  padding: 20px 0 15px 0;
+  padding: 15px 0 5px 0;
   display: flex;
   justify-content: space-between;
 }
@@ -73,7 +72,7 @@ body {
 
 a {
   text-decoration: none;
-  color: white;
+  color: rgb(112, 17, 65);
 }
 
 .links-current-user {
@@ -81,11 +80,8 @@ a {
 }
 
 .logo img {
-  width: 70px;
-  height: 45px;
-  margin-bottom: -15px;
-  margin-top:-25px;
-  margin-left:-10px;
+  width: 35px;
+  height: 25px;
 }
 
 /* ---- components: header ---- */
@@ -109,5 +105,5 @@ a {
   width: 100vw;
   bottom: 0;
   text-align: center;
-  /* padding: 10px 0; */
+  padding: 2px 0;
 }

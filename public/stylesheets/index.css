@@ -1,19 +1,19 @@
 /* ---- layout: index page ---- */
 
 .index-page {
-  background-color: #F39477;
-  padding-top: 58px;
+  background-color: white;
+  padding-top: 53px;
   height: 100vh;
 }
 
 .img-bg {
-  /* background-image: url('/images/mechanic-3.jpg'); */
+  background-image: url('/images/magenta.png');
   background-size: cover;
 }
 
 .type-yourself-section {
   text-align: center;
-  padding-top: 70px;
+  padding-top: 50px;
 }
 
 .type-yourself-section h1,
@@ -24,27 +24,23 @@
 }
 
 .type-yourself-section p {
-  padding-bottom: 50px;
+  padding-bottom: 30px;
 }
 
 .search-field {
   display: flex;
 }
 
-/* .wayser-slogan {
-  width: 335px;
-  margin: 0 auto;
-  height: 15vh;
-  position: absolute;
-  top: 15%;
-  background-color: grey;
-  opacity: 0.6;
-} */
-
 .click-categories-section {
-  padding-top: 20px;
+  padding-top: 25px;
   color: white;
   text-align: center;
+  height: 90%;
+}
+
+.click-categories-section h4 {
+  margin: 0 0 20px;
+  border-bottom: 1px solid black;
 }
 
 .category-btns {
@@ -56,8 +52,7 @@
 /* ---- components: index page ---- */
 
 .service-input,
-.search-btn,
-.category-btns button {
+.search-btn {
   font-size: 1em;
   font-family: inherit;
   border: 1px solid grey;
@@ -71,14 +66,18 @@
 }
 
 .search-btn {
-  background-color: #F2B379;
+  background-color: rgb(69, 19, 99);
   color: white;
   margin-bottom: 30px;
 }
 
-.category-btns button {
-  background-color: white;
+.category-btns a {
+  color: white;
   padding: 5px;
-  width: 42vw;
-  margin-bottom: 10px;
+}
+
+.category-container {
+  background-color: rgb(69, 19, 99);
+  width: 48%;
+  margin-bottom: 15px;
 }
