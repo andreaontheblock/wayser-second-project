@@ -4,6 +4,7 @@ const express = require('express');
 const router = express.Router();
 
 const Service = require('../models/service');
+const isIdValid = require('../middlewares/isIdValid');
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
@@ -42,7 +43,7 @@ router.get('/', function (req, res, next) {
     .catch(next);
 });
 
-router.get('/:serviceId', (req, res, next) => {
+router.get('/:serviceId', isIdValid, (req, res, next) => {
   const serviceId = req.params.serviceId;
   Service.findById(serviceId).populate('provider')
     .then((service) => {
