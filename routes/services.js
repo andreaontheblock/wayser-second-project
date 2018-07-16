@@ -4,6 +4,7 @@ const express = require('express');
 const router = express.Router();
 
 const Service = require('../models/service');
+const isIdValid = require('../middlewares/isIdValid');
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
@@ -13,7 +14,7 @@ router.get('/', function (req, res, next) {
     if (predefinedCategories.find(item => item === req.query.cat)) {
       const serviceCategory = req.query.cat;
       let correctServiceCategory = serviceCategory.charAt(0).toUpperCase() + serviceCategory.substr(1); // UWU SUPER GREAT CODE IN ONE FUKIN LINE!!
-      // @todo refactor
+      // @todo
       if (correctServiceCategory.includes('-')) {
         correctServiceCategory = correctServiceCategory.replace(/-/, ' ');
         let array = correctServiceCategory.split(' ');
@@ -23,8 +24,7 @@ router.get('/', function (req, res, next) {
       }
       filter.category = correctServiceCategory;
     } else {
-      res.render('search-not-found');
-      return;
+      return (next());
     }
   }
 
@@ -37,14 +37,24 @@ router.get('/', function (req, res, next) {
 
   Service.find(filter).populate('provider')
     .then((services) => {
+      if (services.length === 0) {
+        res.status(404);
+        res.render('not-found');
+        return next;
+      }
       res.render('services-category', {services: services});
     })
     .catch(next);
 });
 
-router.get('/:serviceId', (req, res, next) => {
+router.get('/:serviceId', isIdValid, (req, res, next) => {
+  if (!req.session.currentUser) {
+    res.render('auth/signup');
+    return;
+  }
+
   const serviceId = req.params.serviceId;
-  Service.findById(serviceId)
+  Service.findById(serviceId).populate('provider')
     .then((service) => {
       res.render('service-details', {service: service});
     })

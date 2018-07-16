@@ -2,7 +2,7 @@
 
 .profile-section {
   margin-top: 58px;
-  height: 100vh;
+  height: 100%;
   background-color: #124075d3;
   color: white;
 }
@@ -21,6 +21,11 @@
   margin-top: 8vh;
   padding-top: 5vh;
   padding-bottom: 6vh;
+}
+
+.service-container {
+  border: 1px solid white;
+  margin-bottom: 20px;
 }
 
 /* ---- components: profile page ---- */

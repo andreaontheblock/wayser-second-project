@@ -1,11 +1,11 @@
 /* ---- layout: service details page ---- */
 
-.service-details {
+.error-notFound {
   margin-top: 58px;
   height: 100vh;
 }
 
-.service-details h1 {
+.error-notFound h1 {
   text-align: center;
   font-size: 2rem;
   padding-top: 8vh;

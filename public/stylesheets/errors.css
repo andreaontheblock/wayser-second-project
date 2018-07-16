@@ -1,0 +1,21 @@
+/* ---- layout: errors pages ---- */
+
+.service-details {
+  margin-top: 58px;
+  height: 100vh;
+}
+
+.service-details h1 {
+  text-align: center;
+  font-size: 2rem;
+  padding-top: 8vh;
+}
+
+/* ---- components: service details page ---- */
+
+.back-home-btn {
+  width: 100%;
+  background-color: rgba(206, 20, 75, 0.788);
+  color: white;
+  margin-top: 30px;
+}

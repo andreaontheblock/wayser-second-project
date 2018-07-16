@@ -89,7 +89,8 @@ User.create(users)
         price: {
           amount: '15',
           unit: 'hour'
-        }
+        },
+        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
       },
       {
         name: 'Web developer',
@@ -98,7 +99,8 @@ User.create(users)
         price: {
           amount: '60',
           unit: 'hour'
-        }
+        },
+        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
       },
       {
         name: 'Nurse',
@@ -107,7 +109,8 @@ User.create(users)
         price: {
           amount: '50',
           unit: 'hour'
-        }
+        },
+        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
       },
       {
         name: 'Private driver',
@@ -116,7 +119,8 @@ User.create(users)
         price: {
           amount: '25',
           unit: 'hour'
-        }
+        },
+        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
       },
       {
         name: 'Babysitter',
@@ -125,7 +129,8 @@ User.create(users)
         price: {
           amount: '50',
           unit: 'day'
-        }
+        },
+        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
       },
       {
         name: 'High school Janitor',
@@ -134,7 +139,8 @@ User.create(users)
         price: {
           amount: '23',
           unit: 'hour'
-        }
+        },
+        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
       },
       {
         name: 'Consultant',
@@ -143,7 +149,8 @@ User.create(users)
         price: {
           amount: '50',
           unit: 'hour'
-        }
+        },
+        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
       },
       {
         name: 'Local Guide',
@@ -152,7 +159,8 @@ User.create(users)
         price: {
           amount: '190',
           unit: 'week'
-        }
+        },
+        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
       },
       {
         name: 'Donald Trump Impersonator',
@@ -161,7 +169,8 @@ User.create(users)
         price: {
           amount: '20',
           unit: 'hour'
-        }
+        },
+        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
       },
       {
         name: 'Tennis Trainer',
@@ -170,7 +179,8 @@ User.create(users)
         price: {
           amount: '35',
           unit: 'lesson'
-        }
+        },
+        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
       },
       {
         name: 'Dog Walker',
@@ -179,7 +189,8 @@ User.create(users)
         price: {
           amount: '8',
           unit: 'hour'
-        }
+        },
+        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
       },
       {
         name: 'Plumber',
@@ -188,7 +199,8 @@ User.create(users)
         price: {
           amount: '15',
           unit: 'hour'
-        }
+        },
+        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
       },
       {
         name: 'Electrician',
@@ -197,7 +209,8 @@ User.create(users)
         price: {
           amount: '20',
           unit: 'hour'
-        }
+        },
+        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
       },
       {
         name: 'Plumber',
@@ -206,7 +219,8 @@ User.create(users)
         price: {
           amount: '20',
           unit: 'hour'
-        }
+        },
+        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
       }
     ];
 

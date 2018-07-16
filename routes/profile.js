@@ -2,29 +2,29 @@
 
 const express = require('express');
 const router = express.Router();
-// const User = require('../models/user');
+
 const Service = require('../models/service');
+const isUserLoggedIn = require('../middlewares/isUserLoggedIn');
 
 /* GET home page. */
-router.get('/', (req, res, next) => {
-  const currentUser = req.session.currentUser;
-  if (!currentUser) {
-    res.redirect('/');
-    return;
-  }
-  res.render('profile', {currentUser: currentUser});
+router.get('/', isUserLoggedIn, (req, res, next) => {
+  // const currentUser = req.session.currentUser;
+  const userId = {
+    provider: req.session.currentUser._id
+  };
+  Service.find(userId).populate('provider')
+    .then((service) => {
+      res.render('profile', {service: service});
+    })
+    .catch(next);
+  // res.render('profile', {currentUser: currentUser});
 });
 
-router.get('/create-service', (req, res, next) => {
-  const currentUser = req.session.currentUser;
-  if (!currentUser) {
-    res.redirect('/');
-    return;
-  }
+router.get('/create-service', isUserLoggedIn, (req, res, next) => {
   res.render('create-service');
 });
 
-router.post('/create-service', (req, res, next) => {
+router.post('/create-service', isUserLoggedIn, (req, res, next) => {
   console.log(req.body);
 
   const newService = new Service({
@@ -34,7 +34,8 @@ router.post('/create-service', (req, res, next) => {
     price: {
       amount: req.body.priceNumber,
       unit: req.body.priceText
-    }
+    },
+    description: req.body.description
   });
 
   newService.save()
