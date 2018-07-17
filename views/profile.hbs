@@ -1,37 +1,37 @@
 <div class="profile-section">
   <section class="container">
-    <div>
-      <div class="img-profile">
-        <img src="/images/person-icon.png" alt="" width="80" height="50">
-      </div>
-      <h2>{{currentUser.username}}</h2>
-      <p class="profile-email">{{currentUser.email}}</p>
-    </div>
-  </section>
-<div class="services-section-profile">
-  <section class="container">
-      <h3>Your services:</h3>
-      <ul class="service-profile-list">
-        {{#each service}}
-        <div class="service-container">
-          <li>
-            <h4>{{this.name}}</h4>
-            <p>{{this.category}}</p>
-            <p>{{this.price.amount}}€/{{this.price.unit}}</p>
-            <p>{{this.description}}</p>
-            <div class="edit-container">
-              <a href="/profile/edit/{{this._id}}">EDIT</a>
-            </div>
-          </li>
+      <div>
+        <div class="img-profile">
+          <img src="/images/person-icon.png" alt="" width="80" height="50">
         </div>
-        {{/each}}
-      </ul>
+        <h2>{{currentUser.username}}</h2>
+        <p class="profile-email">{{currentUser.email}}</p>
+      </div>
+  </section>
+  <div class="services-section-profile">
+    <section class="container">
+        <h3>Your services:</h3>
+        <ul class="service-profile-list">
+          {{#each service}}
+          <div class="service-container">
+            <li>
+              <h4>{{this.name}}</h4>
+              <p>{{this.category}}</p>
+              <p>{{this.price.amount}}€/{{this.price.unit}}</p>
+              <p>{{this.description}}</p>
+              <div class="edit-container">
+                <a href="/profile/edit/{{this._id}}">EDIT</a>
+              </div>
+            </li>
+          </div>
+          {{/each}}
+        </ul>
       <div class="adding-service">
         <h3>Would you like to <br> add a service?</h3>
         <div class="add-container">
           <a href="/profile/create-service">ADD SERVICE</a>
         </div>
       </div>
-    </div> 
-  </section>
+    </section>
+  </div> 
 </div>

@@ -8,12 +8,14 @@
 }
 
 .login-section {
-  background-image: url('/images/gradient-bg.jpg');
+  background-image: url('/images/magenta.png');
+  background-size: cover;
   /* background-color:#F39477; */
 }
 
 .signup-section {
-  background-image: url('/images/gradient-bg.jpg');
+  background-image: url('/images/magenta.png');
+  background-size: cover;
   /* background-color: #F39477; */
 }
 
@@ -28,7 +30,7 @@
 }
 
 .signup-section h1 {
-  padding-top: 10vh;
+  padding-top: 15vh;
 }
 
 .credentials-container {

@@ -3,7 +3,8 @@
 .profile-section {
   margin-top: 53px;
   height: 100%;
-  background-color: rgb(112, 17, 65);
+  background-image: url('/images/magenta.png');
+  background-size: cover;
   color: black;
 }
 
@@ -46,13 +47,14 @@
 .adding-service {
   color: white;
   text-align: center;
-  padding-bottom: 95px;
+  padding-bottom: 70px;
 }
 
 .service-container {
   margin-bottom: 20px;
-  background-color: rgb(112, 17, 65);
-  border-radius: 5vw;
+  background-image: url('/images/magenta.png');
+  /* background-color: rgb(112, 17, 65); */
+  /* border-radius: 5vw; */
   padding: 20px;
 }
 
@@ -70,13 +72,17 @@
 .services-section-profile {
   background-color: white;
   padding-top: 5px;
-  border-radius: 5vw;
+  /* border-radius: 5vw; */
 }
 
 .edit-container,
 .add-container {
   display: flex;
   justify-content: center;
+}
+
+.adding-service h3 {
+  color: rgb(112, 17, 65)
 }
 
 /* ---- components: profile page ---- */
@@ -88,7 +94,7 @@
   font-size: 0.8rem;
   border: 1px solid black;
   border-radius: 4px;
-  background-color: rgb(9, 9, 87);
+  background-color: rgb(112, 17, 65);
 }
 
 .adding-service a {
