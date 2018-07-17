@@ -2,37 +2,25 @@
 
   <div class= "container">
     <h1>List of Services</h1>
+
     <div class="filters">
-      <h5>Filter by:</h5>
-
-      {{#if queryStatus.isCat}}
-      <form action="/services?cat=&sort=" method="GET">
+      <h5>Sort by:</h5>
+      <form action="/services" method="GET">
+        {{#if queryStatus.isCat}}
         <input type="hidden" value="{{queryStatus.isCat}}" name="cat">
-        <select name="sort" id="select-price">
-          <option value="" disabled selected>Please select filter</option>
-          <option value="name-asc">Name (ascending)</option>
-          <option value="name-desc">Name (descending)</option>
-          <option value="price-asc">Price (ascending)</option>
-          <option value="price-desc">Price (descending)</option>
-        </select>
-        <button type="submit">FILTER</button> 
-        </form>
-      {{/if}}
-
-      {{#if queryStatus.isTerms}}
-      <form action="/services?terms=&sort=" method="GET">
+        {{/if}}
+        {{#if queryStatus.isTerms}}
         <input type="hidden" value="{{queryStatus.isTerms}}" name="terms">
+        {{/if}}
         <select name="sort" id="select-price">
           <option value="" disabled selected>Please select filter</option>
-          <option value="name-asc">Name (ascending)</option>
-          <option value="name-desc">Name (descending)</option>
-          <option value="price-asc">Price (ascending)</option>
-          <option value="price-desc">Price (descending)</option>
+          <option {{#if queryStatus.isSortByNameAsc}}selected{{/if}} value="name-asc">Name (ascending)</option>
+          <option {{#if queryStatus.isSortByNameDesc}}selected{{/if}} value="name-desc">Name (descending)</option>
+          <option {{#if queryStatus.isSortByPriceAsc}}selected{{/if}} value="price-asc">Price (ascending)</option>
+          <option {{#if queryStatus.isSortByPriceDesc}}selected{{/if}} value="price-desc">Price (descending)</option>
         </select>
-        <button type="submit">FILTER</button> 
+        <button type="submit">Sort</button> 
       </form>
-      {{/if}}
-
     </div>
 
     <article class="card-container">
