@@ -2,7 +2,7 @@
 
   <section class="container">
     <h1>Editing a service</h1>
-    <form method="POST" action="/profile/create-service">
+    <form method="POST" action="/profile/edit-service/{{service._id}}">
       <div class="field" >
         <label>Service title:</label>
         <input type="text" name="job" value="{{service.name}}"/>
@@ -10,7 +10,7 @@
       <div class="field" >
         <label>Category:</label>
         <select class="select-category" name="category">
-          <option value="" disabled selected>{{service.category}}</option>
+          <option value="{{service.category}}">{{service.category}}</option> {{!-- Repeated service category--}}
           <option>Education</option>
           <option>Technology</option>
           <option>Health Care</option>
@@ -31,7 +31,7 @@
         <input type="number" name="priceNumber" value="{{service.price.amount}}"/>
         <span>/</span>
         <select class="select-price-unit" name="priceText">
-          <option value="" disabled selected>{{service.price.unit}}</option>
+          <option value="{{service.price.unit}}">{{service.price.unit}}</option>
           <option>hour</option>
           <option>day</option>
           <option>week</option>
@@ -41,7 +41,7 @@
         </select>
       </div>
       <div class="field submit">
-        <button class="service-added-btn" type="submit">SAVE SERVICE</button>
+        <button class="service-added-btn" type="submit">SAVE CHANGES</button>
       </div>
     </form>
 

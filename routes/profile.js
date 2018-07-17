@@ -45,11 +45,39 @@ router.post('/create-service', isUserLoggedIn, (req, res, next) => {
     .catch(next);
 });
 
-router.get('/edit/:serviceId', (req, res, next) => {
+router.get('/edit/:serviceId', isUserLoggedIn, (req, res, next) => {
   Service.findById(req.params.serviceId).populate('provider')
     .then((service) => {
-      console.log(service);
+      // console.log(service);
       res.render('edit-service', {service: service});
+    })
+    .catch(next);
+});
+
+// is info required to create a service??
+// projections
+router.post('/edit-service/:serviceId', isUserLoggedIn, (req, res, next) => {
+  const data = {
+    name: req.body.job,
+    category: req.body.category,
+    price: {
+      amount: req.body.priceNumber,
+      unit: req.body.priceText
+    },
+    description: req.body.description
+  };
+
+  Service.findByIdAndUpdate(req.params.serviceId, {
+    name: data.name,
+    category: data.category,
+    price: {
+      amount: data.price.amount,
+      unit: data.price.unit
+    },
+    description: data.description
+  }).populate('provider')
+    .then(() => {
+      res.redirect('/profile');
     })
     .catch(next);
 });
