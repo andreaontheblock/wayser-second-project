@@ -8,10 +8,14 @@ const isIdValid = require('../middlewares/isIdValid');
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
+  // const backURL = req.session.backURL;
+  // console.log(backURL);
   const filter = {};
   const predefinedCategories = ['education', 'technology', 'health-care', 'transportation', 'social-services', 'maintenance', 'business', 'tourism', 'others'];
+
   if (req.query.cat) {
     if (predefinedCategories.find(item => item === req.query.cat)) {
+      var isCat = req.query.cat;
       const serviceCategory = req.query.cat;
       let correctServiceCategory = serviceCategory.charAt(0).toUpperCase() + serviceCategory.substr(1); // UWU SUPER GREAT CODE IN ONE FUKIN LINE!!
       // @todo
@@ -29,11 +33,18 @@ router.get('/', function (req, res, next) {
   }
 
   if (req.query.terms) {
+    var isTerms = req.query.terms;
     filter.name = {
       $regex: new RegExp(req.query.terms),
       $options: 'i'
     };
   }
+
+  const queryStatus = {
+    isCat: isCat,
+    isTerms: isTerms
+  };
+  console.log(queryStatus);
 
   Service.find(filter).populate('provider')
     .then((services) => {
@@ -42,7 +53,7 @@ router.get('/', function (req, res, next) {
         res.render('not-found');
         return next;
       }
-      res.render('services-category', {services: services});
+      res.render('services-category', {services: services, queryStatus: queryStatus});
     })
     .catch(next);
 });
