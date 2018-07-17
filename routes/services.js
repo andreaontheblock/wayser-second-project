@@ -90,7 +90,7 @@ router.get('/', function (req, res, next) {
         return next;
       }
 
-      console.log(req.query);
+      // console.log(req.query);
 
       res.render('services-category', {services: services, queryStatus: queryStatus});
     })
@@ -103,8 +103,8 @@ router.get('/', function (req, res, next) {
 
 router.get('/:serviceId', isIdValid, (req, res, next) => {
   if (!req.session.currentUser) {
-    var lastURL = req.header('Referer').split('/')[3];
-    req.session.lastURL = lastURL;
+    req.session.lastURL = req.header('Referer').split('/')[3];
+    req.session.counter = 1;
     res.render('auth/signup');
     return;
   }
