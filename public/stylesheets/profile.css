@@ -3,21 +3,31 @@
 .profile-section {
   margin-top: 53px;
   height: 100%;
-  background-color: #F39477;
+  background-color: rgb(112, 17, 65);
   color: black;
 }
 
-.profile-section h1 {
-  text-align: center;
-  font-size: 2rem;
-  padding-top: 35px;
-  padding-bottom: 10px;
-}
-
-.profile-section h4, 
+.profile-section h2,
+.profile-section h3, 
 .profile-section p {
   margin: 0;
-  padding: 5px;
+  color: white;
+}
+
+.profile-section h3 {
+  color: black;
+}
+
+.profile-section h2,
+.profile-section h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 2vh;
+}
+
+.profile-section .profile-email {
+  text-align: center;
+  padding-bottom: 20px;
 }
 
 .adding-service {
@@ -28,13 +38,26 @@
 
 .service-container {
   margin-bottom: 20px;
-  background-color: white;
+  background-color: rgb(112, 17, 65);
+  border-radius: 5vw;
   padding: 10px;
 }
 
 .service-profile-list {
   list-style: none;
   padding-left: 0;
+}
+
+.img-profile {
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.services-section-profile {
+  background-color: white;
+  padding-top: 5px;
+  border-radius: 5vw;
 }
 
 /* ---- components: profile page ---- */

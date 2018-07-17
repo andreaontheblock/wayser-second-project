@@ -1,25 +1,33 @@
 <div class="profile-section">
   <section class="container">
-    <h1>Your Profile</h1>
-    <p>Name: {{currentUser.username}}</p>
-    <p>Email: {{currentUser.email}}</p>
-    <h2>Your services:</h2>
-    <ul class="service-profile-list">
-      {{#each service}}
-      <div class="service-container">
-        <li>
-          <h4>{{this.name}}</h4>
-          <p>{{this.category}}</p>
-          <p>{{this.price.amount}}€/{{this.price.unit}}</p>
-          <p>{{this.description}}</p>
-          <a href="/profile/edit/{{this._id}}">EDIT</a>
-        </li>
+    <div>
+      <div class="img-profile">
+        <img src="/images/person-icon.png" alt="" width="80" height="50">
       </div>
-      {{/each}}
-    </ul>
-    <div class="adding-service">
-      <h3>Would you like to provide a service?</h3>
-      <a href="/profile/create-service">ADD SERVICE</a>
+      <h2>{{currentUser.username}}</h2>
+      <p class="profile-email">{{currentUser.email}}</p>
     </div>
+  </section>
+<div class="services-section-profile">
+  <section class="container">
+      <h3>Your services:</h3>
+      <ul class="service-profile-list">
+        {{#each service}}
+        <div class="service-container">
+          <li>
+            <h4>{{this.name}}</h4>
+            <p>{{this.category}}</p>
+            <p>{{this.price.amount}}€/{{this.price.unit}}</p>
+            <p>{{this.description}}</p>
+            <a href="/profile/edit/{{this._id}}">EDIT</a>
+          </li>
+        </div>
+        {{/each}}
+      </ul>
+      <div class="adding-service">
+        <h3>Would you like to provide a service?</h3>
+        <a href="/profile/create-service">ADD SERVICE</a>
+      </div>
+    </div> 
   </section>
 </div>
