@@ -9,7 +9,7 @@ function main () {
     accessToken: 'pk.eyJ1IjoibW9udHNlMDMiLCJhIjoiY2pqcHN5NHk3M2djeDNrcXM5aTFmYWI2eSJ9.BYUUW6YUVADssrZJ47vueA'
   }).addTo(mymap);
 
-  axios.get(`/api/services/${serviceId}`) // Route
+  axios.get(`/api/services/${serviceId}`) // New route
     .then((result) => {
       const coordinates = result.data.provider.location.coordinates;
       const serviceName = result.data.name;

@@ -131,7 +131,7 @@ User.create(users)
         category: 'Education',
         provider: usersIds[0],
         price: {
-          amount: '15',
+          amount: 15,
           unit: 'hour'
         },
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
@@ -141,7 +141,7 @@ User.create(users)
         category: 'Technology',
         provider: usersIds[1],
         price: {
-          amount: '60',
+          amount: 60,
           unit: 'hour'
         },
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
@@ -151,7 +151,7 @@ User.create(users)
         category: 'Health Care',
         provider: usersIds[2],
         price: {
-          amount: '50',
+          amount: 50,
           unit: 'hour'
         },
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
@@ -161,7 +161,7 @@ User.create(users)
         category: 'Transportation',
         provider: usersIds[3],
         price: {
-          amount: '25',
+          amount: 25,
           unit: 'hour'
         },
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
@@ -171,7 +171,7 @@ User.create(users)
         category: 'Social Services',
         provider: usersIds[4],
         price: {
-          amount: '50',
+          amount: 50,
           unit: 'day'
         },
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
@@ -181,7 +181,7 @@ User.create(users)
         category: 'Maintenance',
         provider: usersIds[5],
         price: {
-          amount: '23',
+          amount: 23,
           unit: 'hour'
         },
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
@@ -191,7 +191,7 @@ User.create(users)
         category: 'Business',
         provider: usersIds[6],
         price: {
-          amount: '50',
+          amount: 50,
           unit: 'hour'
         },
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
@@ -201,7 +201,7 @@ User.create(users)
         category: 'Tourism',
         provider: usersIds[7],
         price: {
-          amount: '190',
+          amount: 190,
           unit: 'week'
         },
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
@@ -211,7 +211,7 @@ User.create(users)
         category: 'Others',
         provider: usersIds[7],
         price: {
-          amount: '20',
+          amount: 20,
           unit: 'hour'
         },
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
@@ -221,7 +221,7 @@ User.create(users)
         category: 'Education',
         provider: usersIds[0],
         price: {
-          amount: '35',
+          amount: 350,
           unit: 'lesson'
         },
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
@@ -231,7 +231,7 @@ User.create(users)
         category: 'Others',
         provider: usersIds[8],
         price: {
-          amount: '8',
+          amount: 800,
           unit: 'hour'
         },
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
@@ -241,7 +241,7 @@ User.create(users)
         category: 'Maintenance',
         provider: usersIds[9],
         price: {
-          amount: '15',
+          amount: 15,
           unit: 'hour'
         },
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
@@ -251,7 +251,7 @@ User.create(users)
         category: 'Maintenance',
         provider: usersIds[10],
         price: {
-          amount: '20',
+          amount: 20,
           unit: 'hour'
         },
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
@@ -261,7 +261,7 @@ User.create(users)
         category: 'Maintenance',
         provider: usersIds[5],
         price: {
-          amount: '20',
+          amount: 20,
           unit: 'hour'
         },
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry when an unknown printer took a galley of type and scrambled it to make a type specimen book.'

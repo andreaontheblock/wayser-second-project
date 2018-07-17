@@ -13,6 +13,7 @@ const usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
 const servicesRouter = require('./routes/services');
 const profileRouter = require('./routes/profile');
+const apiRouter = require('./routes/api');
 
 const app = express();
 
@@ -31,8 +32,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-// antes de las rutas
 
 app.use(session({
   store: new MongoStore({
@@ -64,29 +63,7 @@ app.use('/users', usersRouter);
 app.use('/auth', authRouter);
 app.use('/services', servicesRouter);
 app.use('/profile', profileRouter);
-// app.use('/api', apiRouter);
-
-const Service = require('./models/service');
-app.get('/api/services/:serviceId', /* is valid */ (req, res, next) => {
-  if (!req.session.currentUser) {
-    res.status(401).json({error: 'not authorized'});
-    return;
-  }
-
-  const serviceId = req.params.serviceId;
-  Service.findById(serviceId).populate('provider')
-    .then((service) => {
-      if (!service) {
-        res.status(404).json({error: 'not found'});
-        return;
-      }
-      res.json(service);
-    })
-    .catch((err) => {
-      console.error('ERROR', req.method, req.path, err);
-      res.status(500).json({error: 'server error'});
-    });
-});
+app.use('/api', apiRouter);
 
 // -- 404 and error handler
 

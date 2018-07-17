@@ -9,7 +9,7 @@ const serviceSchema = new Schema({
   category: {type: String, enum: ['Education', 'Technology', 'Health Care', 'Transportation', 'Social Services', 'Maintenance', 'Business', 'Tourism', 'Others'], required: true},
   provider: {type: ObjectId, ref: 'User'},
   price: {
-    amount: {type: String, required: true},
+    amount: {type: Number, required: true},
     unit: {
       type: String,
       enum: ['hour', 'day', 'week', 'month', 'year', 'lesson'],
