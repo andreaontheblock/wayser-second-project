@@ -4,10 +4,12 @@
     <h1>{{service.name}}</h1>
     <p>Price: {{service.price.amount}}€/{{service.price.unit}}</p>
     <p>Category: {{service.category}}</p>
-    <p>Provider: {{service.provider.username}}</p>
+    <p>Provider: </p>
+    <p id="provider-name">{{service.provider.username}}</p>
+    <p id="service-id">{{service._id}}</p>
     <p>Description: {{service.description}}</p>
     <div id="mapid"></div>
-
+    {{service.provider.location}}
     {{!-- <form action="/services/montse" method="GET">
       <button>BACK</button>
     </form>

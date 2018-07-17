@@ -17,57 +17,101 @@ const users = [
   {
     username: 'Montse',
     password: bcrypt.hashSync('montse', salt).toString(),
-    email: 'montse@montse.com'
+    email: 'montse@montse.com',
+    location: {
+      type: 'Point',
+      coordinates: [41.3818, 2.1685]
+    }
   },
   {
     username: 'Jose',
     password: bcrypt.hashSync('jose', salt).toString(),
-    email: 'jose@jose.com'
+    email: 'jose@jose.com',
+    location: {
+      type: 'Point',
+      coordinates: [41.3818, 2.1685]
+    }
   },
   {
     username: 'Javi',
     password: bcrypt.hashSync('javi', salt).toString(),
-    email: 'javi@javi.com'
+    email: 'javi@javi.com',
+    location: {
+      type: 'Point',
+      coordinates: [41.3818, 2.1685]
+    }
   },
   {
     username: 'Andrea',
     password: bcrypt.hashSync('andrea', salt).toString(),
-    email: 'andrea@andrea.com'
+    email: 'andrea@andrea.com',
+    location: {
+      type: 'Point',
+      coordinates: [41.3818, 2.1685]
+    }
   },
   {
     username: 'Will',
     password: bcrypt.hashSync('will', salt).toString(),
-    email: 'will@will.com'
+    email: 'will@will.com',
+    location: {
+      type: 'Point',
+      coordinates: [41.3818, 2.1685]
+    }
   },
   {
     username: 'Julio',
     password: bcrypt.hashSync('julio', salt).toString(),
-    email: 'julio@julio.com'
+    email: 'julio@julio.com',
+    location: {
+      type: 'Point',
+      coordinates: [41.3818, 2.1685]
+    }
   },
   {
     username: 'Daniela',
     password: bcrypt.hashSync('daniela', salt).toString(),
-    email: 'daniela@daniela.com'
+    email: 'daniela@daniela.com',
+    location: {
+      type: 'Point',
+      coordinates: [41.3818, 2.1685]
+    }
   },
   {
     username: 'Gabriel',
     password: bcrypt.hashSync('gabriel', salt).toString(),
-    email: 'gabriel@gabriel.com'
+    email: 'gabriel@gabriel.com',
+    location: {
+      type: 'Point',
+      coordinates: [41.3818, 2.1685]
+    }
   },
   {
     username: 'Khalil',
     password: bcrypt.hashSync('khalil', salt).toString(),
-    email: 'khalil@khalil.com'
+    email: 'khalil@khalil.com',
+    location: {
+      type: 'Point',
+      coordinates: [41.3818, 2.1685]
+    }
   },
   {
     username: 'Sebastian',
     password: bcrypt.hashSync('sebastian', salt).toString(),
-    email: 'sebastian@sebastian.com'
+    email: 'sebastian@sebastian.com',
+    location: {
+      type: 'Point',
+      coordinates: [41.3818, 2.1685]
+    }
   },
   {
     username: 'Julien',
     password: bcrypt.hashSync('julien', salt).toString(),
-    email: 'julien@julien.com'
+    email: 'julien@julien.com',
+    location: {
+      type: 'Point',
+      coordinates: [41.3818, 2.1685]
+    }
   }
 ];
 

@@ -7,7 +7,9 @@
     "globals": {
       "document": false,
       "window": false,
-      "console": false
+      "console": false,
+      "axios": false,
+      "L": false
     },
     "rules": {
       "indent": [
