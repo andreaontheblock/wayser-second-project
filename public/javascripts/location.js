@@ -9,17 +9,6 @@ function getCurrentLocation () {
 }
 
 function main () {
-  const form = document.getElementById('sort-form');
-  const submitButton = document.getElementById('sort-submit');
-  const select = document.getElementById('sort-select');
-
-  submitButton.remove();
-
-  function submit () {
-    form.submit();
-  }
-  select.addEventListener('change', submit);
-
   const latitudeInput = document.querySelector('input[name ="latitude"]');
   const longitudeInput = document.querySelector('input[name ="longitude"]');
   getCurrentLocation()
