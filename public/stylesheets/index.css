@@ -78,9 +78,16 @@
 
 .category-container {
   background-color: rgb(69, 19, 99);
-  width: 48%;
-  margin-bottom: 15px;
+  width: 49.5%;
+  margin-bottom: 5px;
   border: 1px solid grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+}
 }
 
 .category-container img {

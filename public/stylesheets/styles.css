@@ -16,9 +16,9 @@ body {
 /* ---- typography ---- */
 
 body {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: 16px;
-  line-height: 147%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  line-height: 120%;
 }
 
 /* ---- main layout ---- */
