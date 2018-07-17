@@ -5,21 +5,21 @@
 
     <div class="filters">
       <h5>Sort by:</h5>
-      <form action="/services" method="GET">
+      <form id="sort-form" action="/services" method="GET">
         {{#if queryStatus.isCat}}
         <input type="hidden" value="{{queryStatus.isCat}}" name="cat">
         {{/if}}
         {{#if queryStatus.isTerms}}
         <input type="hidden" value="{{queryStatus.isTerms}}" name="terms">
         {{/if}}
-        <select name="sort" id="select-price">
+        <select id="sort-select" name="sort" id="select-price">
           <option value="" disabled selected>Please select filter</option>
           <option {{#if queryStatus.isSortByNameAsc}}selected{{/if}} value="name-asc">Name (ascending)</option>
           <option {{#if queryStatus.isSortByNameDesc}}selected{{/if}} value="name-desc">Name (descending)</option>
           <option {{#if queryStatus.isSortByPriceAsc}}selected{{/if}} value="price-asc">Price (ascending)</option>
           <option {{#if queryStatus.isSortByPriceDesc}}selected{{/if}} value="price-desc">Price (descending)</option>
         </select>
-        <button type="submit">Sort</button> 
+        <button hidden id ="sort-submit" type="submit">Sort</button> 
       </form>
     </div>
 
@@ -40,3 +40,5 @@
   </div>
 
 </section>
+
+<script src="/javascripts/main.js"></script>
