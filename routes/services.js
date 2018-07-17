@@ -45,7 +45,38 @@ router.get('/', function (req, res, next) {
     isTerms: isTerms
   };
 
-  Service.find(filter).populate('provider')
+  let sortSchema = {
+    sort: '',
+    key: ''
+  };
+
+  if (req.query.sort) {
+    switch (req.query.sort) {
+    case ('name-asc'):
+      sortSchema.sort = 1;
+      sortSchema.key = 'name';
+      break;
+    case ('name-desc'):
+      sortSchema.sort = -1;
+      sortSchema.key = 'name';
+      break;
+    case ('price-asc'):
+      sortSchema.sort = 1;
+      sortSchema.key = 'price.amount';
+      break;
+    case ('price-desc'):
+      sortSchema.sort = -1;
+      sortSchema.key = 'price.amount';
+      break;
+    }
+  } else {
+    sortSchema.sort = 1;
+    sortSchema.key = 'name';
+  }
+  const sort = {};
+  sort[sortSchema.key] = sortSchema.sort; // Creates an object whose key is 'name'
+
+  Service.find(filter).populate('provider').sort(sort)
     .then((services) => {
       if (services.length === 0) {
         res.status(404);
