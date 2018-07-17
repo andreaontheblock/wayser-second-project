@@ -19,14 +19,18 @@
             <p>{{this.category}}</p>
             <p>{{this.price.amount}}€/{{this.price.unit}}</p>
             <p>{{this.description}}</p>
-            <a href="/profile/edit/{{this._id}}">EDIT</a>
+            <div class="edit-container">
+              <a href="/profile/edit/{{this._id}}">EDIT</a>
+            </div>
           </li>
         </div>
         {{/each}}
       </ul>
       <div class="adding-service">
-        <h3>Would you like to provide a service?</h3>
-        <a href="/profile/create-service">ADD SERVICE</a>
+        <h3>Would you like to <br> add a service?</h3>
+        <div class="add-container">
+          <a href="/profile/create-service">ADD SERVICE</a>
+        </div>
       </div>
     </div> 
   </section>
