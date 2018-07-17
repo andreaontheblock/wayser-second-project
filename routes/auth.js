@@ -9,7 +9,6 @@ const User = require('../models/user');
 const isUserLoggedOut = require('../middlewares/isUserLoggedOut');
 const saltRounds = 10;
 
-// the routes to render the form is /auth/signup
 router.get('/signup', isUserLoggedOut, (req, res, next) => {
   const data = {
     messages: req.flash('signup-error')
@@ -20,7 +19,6 @@ router.get('/signup', isUserLoggedOut, (req, res, next) => {
 router.post('/signup', isUserLoggedOut, (req, res, next) => {
   if (!req.body.username || !req.body.password || !req.body.email) {
     req.flash('signup-error', 'Please complete all fields');
-    // save session
     res.redirect('/auth/signup');
     return;
   }
@@ -63,7 +61,6 @@ router.post('/signup', isUserLoggedOut, (req, res, next) => {
           newUser.save()
             .then(() => {
               req.session.currentUser = newUser;
-              // back
               res.redirect('/profile');
             })
             .catch(next);

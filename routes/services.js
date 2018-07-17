@@ -103,6 +103,8 @@ router.get('/', function (req, res, next) {
 
 router.get('/:serviceId', isIdValid, (req, res, next) => {
   if (!req.session.currentUser) {
+    var lastURL = req.header('Referer').split('/')[3];
+    req.session.lastURL = lastURL;
     res.render('auth/signup');
     return;
   }
