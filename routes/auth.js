@@ -20,6 +20,7 @@ router.get('/signup', isUserLoggedOut, (req, res, next) => {
 router.post('/signup', isUserLoggedOut, (req, res, next) => {
   if (!req.body.username || !req.body.password || !req.body.email) {
     req.flash('signup-error', 'Please complete all fields');
+    // save session
     res.redirect('/auth/signup');
     return;
   }
@@ -28,6 +29,7 @@ router.post('/signup', isUserLoggedOut, (req, res, next) => {
     .then((user) => {
       if (user) {
         req.flash('signup-error', 'Username already taken');
+        // save session
         res.redirect('/auth/signup');
         return;
       }
@@ -61,6 +63,7 @@ router.post('/signup', isUserLoggedOut, (req, res, next) => {
           newUser.save()
             .then(() => {
               req.session.currentUser = newUser;
+              // back
               res.redirect('/profile');
             })
             .catch(next);

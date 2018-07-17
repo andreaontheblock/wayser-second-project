@@ -64,6 +64,29 @@ app.use('/users', usersRouter);
 app.use('/auth', authRouter);
 app.use('/services', servicesRouter);
 app.use('/profile', profileRouter);
+// app.use('/api', apiRouter);
+
+const Service = require('./models/service');
+app.get('/api/services/:serviceId', /* is valid */ (req, res, next) => {
+  if (!req.session.currentUser) {
+    res.status(401).json({error: 'not authorized'});
+    return;
+  }
+
+  const serviceId = req.params.serviceId;
+  Service.findById(serviceId).populate('provider')
+    .then((service) => {
+      if (!service) {
+        res.status(404).json({error: 'not found'});
+        return;
+      }
+      res.json(service);
+    })
+    .catch((err) => {
+      console.error('ERROR', req.method, req.path, err);
+      res.status(500).json({error: 'server error'});
+    });
+});
 
 // -- 404 and error handler
 
