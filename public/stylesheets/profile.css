@@ -40,7 +40,8 @@
 /* ---- components: profile page ---- */
 
 .adding-service button {
-  width: 42vw;
+  width: 150px;
   background-color: #F2B379;
-  color: white;
+  color: black;
+  margin: 50px;
 }
