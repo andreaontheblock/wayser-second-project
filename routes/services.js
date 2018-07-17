@@ -44,7 +44,6 @@ router.get('/', function (req, res, next) {
     isCat: isCat,
     isTerms: isTerms
   };
-  console.log(queryStatus);
 
   Service.find(filter).populate('provider')
     .then((services) => {
@@ -53,6 +52,9 @@ router.get('/', function (req, res, next) {
         res.render('not-found');
         return next;
       }
+
+      console.log(req.query);
+
       res.render('services-category', {services: services, queryStatus: queryStatus});
     })
     .catch(next);

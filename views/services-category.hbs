@@ -6,26 +6,31 @@
       <h5>Filter by:</h5>
 
       {{#if queryStatus.isCat}}
-      <form action="/services?cat={{this}}&sort=" method="GET">
-        <select name="select-price" id="select-price">
+      <form action="/services?cat=&sort=" method="GET">
+        <input type="hidden" value="{{queryStatus.isCat}}" name="cat">
+        <select name="sort" id="select-price">
           <option value="" disabled selected>Please select filter</option>
           <option value="name-asc">Name (ascending)</option>
           <option value="name-desc">Name (descending)</option>
           <option value="price-asc">Price (ascending)</option>
           <option value="price-desc">Price (descending)</option>
         </select>
-        {{!-- <input type="hidden" name="cat" value={{}}>
-        <input type="hidden" name="terms" value={{}}> --}}
         <button type="submit">FILTER</button> 
         </form>
       {{/if}}
 
       {{#if queryStatus.isTerms}}
-      {{!-- <form action="/services?terms={{this}}" method="GET">
-        <input type="hidden" name="cat" value={{}}>
-        <input type="hidden" name="terms" value={{}}>
-        <button type="submit">FILTER</button> {{!-- hide button!! --}}
-      </form> --}}
+      <form action="/services?terms=&sort=" method="GET">
+        <input type="hidden" value="{{queryStatus.isTerms}}" name="terms">
+        <select name="sort" id="select-price">
+          <option value="" disabled selected>Please select filter</option>
+          <option value="name-asc">Name (ascending)</option>
+          <option value="name-desc">Name (descending)</option>
+          <option value="price-asc">Price (ascending)</option>
+          <option value="price-desc">Price (descending)</option>
+        </select>
+        <button type="submit">FILTER</button> 
+      </form>
       {{/if}}
 
     </div>
