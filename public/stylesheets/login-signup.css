@@ -23,6 +23,12 @@
 .signup-section h1 {
   text-align: center;
   font-size: 2rem;
+  color: white;
+}
+
+.login-section label,
+.signup-section label {
+  color: white;
 }
 
 .login-section h1 {
