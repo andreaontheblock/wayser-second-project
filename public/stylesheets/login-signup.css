@@ -59,7 +59,6 @@
 .sign-in-link,
 .log-in-link {
   color: white;
-  margin-left: 200px;
   font-size: 19px;
 }
 .validation li {
@@ -70,6 +69,21 @@
   width: 100%;
   margin-left: -15px;
   padding: 10px;
+}
+
+.signup-section .signup-options,
+.login-section .login-options {
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  margin-right: 15vw;
+}
+
+.signup-section .signup-options a,
+.login-section .login-options a {
+  font-size: 1rem;
+  text-decoration: underline;
 }
 
 /* ---- components: login / signup page ---- */

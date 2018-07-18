@@ -94,12 +94,12 @@ router.post('/login', isUserLoggedOut, (req, res, next) => {
   User.findOne({ username: req.body.username })
     .then((user) => {
       if (!user) {
-        req.flash('login-error', 'Username or password are incorrect');
+        req.flash('login-error', 'Incorrect username');
         res.redirect('/auth/login');
         return;
       }
       if (!bcrypt.compareSync(req.body.password, user.password)) {
-        req.flash('login-error', 'Username or password are incorrect');
+        req.flash('login-error', 'Incorrect password');
         res.redirect('/auth/login');
         return;
       }
