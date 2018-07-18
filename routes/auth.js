@@ -23,55 +23,57 @@ router.post('/signup', isUserLoggedOut, (req, res, next) => {
     return;
   }
 
-  User.findOne({username: req.body.username})
+  const criteria = {
+    $or: [
+      {username: req.body.username},
+      {email: req.body.email}
+    ]
+  };
+  User.findOne(criteria)
     .then((user) => {
       if (user) {
-        req.flash('signup-error', 'Username already taken');
+        if (user.username === req.body.username) {
+          req.flash('signup-error', 'Username already taken');
+        } else {
+          req.flash('signup-error', 'Email already taken');
+        }
         res.redirect('/auth/signup');
         return;
       }
 
-      return User.findOne({email: req.body.email})
-        .then((user) => {
-          if (user) {
-            req.flash('signup-error', 'Email already taken');
-            res.redirect('/auth/signup');
-            return;
+      if (!validator.isEmail(req.body.email)) {
+        req.flash('signup-error', 'Please enter a valid email');
+        res.redirect('/auth/signup');
+        return;
+      }
+
+      const salt = bcrypt.genSaltSync(saltRounds);
+      const hashedPassword = bcrypt.hashSync(req.body.password, salt);
+
+      const newUser = new User({
+        username: req.body.username,
+        password: hashedPassword,
+        email: req.body.email,
+        location: {
+          type: 'Point',
+          coordinates: [req.body.latitude, req.body.longitude]
+        }
+      });
+
+      newUser.save()
+        .then(() => {
+          req.session.currentUser = newUser;
+
+          if (req.session.counter === 1) {
+            var lastUrlbeforeSignIn = req.session.lastURL;
+            req.session.counter = 0;
+
+            res.redirect(`/${lastUrlbeforeSignIn}`);
+            return next;
           }
-          if (!validator.isEmail(req.body.email)) {
-            req.flash('signup-error', 'Please enter a valid email');
-            res.redirect('/auth/signup');
-            return;
-          }
-
-          const salt = bcrypt.genSaltSync(saltRounds);
-          const hashedPassword = bcrypt.hashSync(req.body.password, salt);
-
-          const newUser = new User({
-            username: req.body.username,
-            password: hashedPassword,
-            email: req.body.email,
-            location: {
-              type: 'Point',
-              coordinates: [req.body.latitude, req.body.longitude]
-            }
-          });
-
-          newUser.save()
-            .then(() => {
-              req.session.currentUser = newUser;
-
-              if (req.session.counter === 1) {
-                var lastUrlbeforeSignIn = req.session.lastURL;
-                req.session.counter = 0;
-
-                res.redirect(`/${lastUrlbeforeSignIn}`);
-                return next;
-              }
-              res.redirect('/profile');
-            })
-            .catch(next);
-        });
+          res.redirect('/profile');
+        })
+        .catch(next);
     })
     .catch(next);
 });
