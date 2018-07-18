@@ -12,14 +12,9 @@ router.get('/', isUserLoggedIn, (req, res, next) => {
     provider: req.session.currentUser._id
   };
 
-  if (req.session.counter === 1) {
-    var lastUrlbeforeSignIn = req.session.lastURL;
-    req.session.counter = 0;
-  }
-
   Service.find(userId).populate('provider')
     .then((service) => {
-      res.render('profile', {service: service, lastUrlbeforeSignIn});
+      res.render('profile', {service: service});
     })
     .catch(next);
 });
