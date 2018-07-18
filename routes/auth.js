@@ -27,7 +27,6 @@ router.post('/signup', isUserLoggedOut, (req, res, next) => {
     .then((user) => {
       if (user) {
         req.flash('signup-error', 'Username already taken');
-        // save session
         res.redirect('/auth/signup');
         return;
       }
@@ -39,7 +38,7 @@ router.post('/signup', isUserLoggedOut, (req, res, next) => {
             res.redirect('/auth/signup');
             return;
           }
-          if (!validator.isEmail(req.body.email)) { // Validating email
+          if (!validator.isEmail(req.body.email)) {
             req.flash('signup-error', 'Please enter a valid email');
             res.redirect('/auth/signup');
             return;

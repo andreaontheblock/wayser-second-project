@@ -6,10 +6,8 @@ const router = express.Router();
 const Service = require('../models/service');
 const isIdValid = require('../middlewares/isIdValid');
 
-/* GET users listing. */
+/* GET users listings */
 router.get('/', function (req, res, next) {
-  // const backURL = req.session.backURL;
-  // console.log(backURL);
   const filter = {};
   const predefinedCategories = ['education', 'technology', 'health-care', 'transportation', 'social-services', 'maintenance', 'business', 'tourism', 'others'];
 
@@ -44,8 +42,6 @@ router.get('/', function (req, res, next) {
     isCat: isCat,
     isTerms: isTerms
   };
-
-  // const queryStatus = isCat || isTerms;
 
   let sortSchema = {
     sort: '',
@@ -90,16 +86,10 @@ router.get('/', function (req, res, next) {
         return next;
       }
 
-      // console.log(req.query);
-
       res.render('services-category', {services: services, queryStatus: queryStatus});
     })
     .catch(next);
 });
-
-// router.get('/montse', (req, res, next) => {
-//   res.redirect(req.session.backURL || '/');
-// });
 
 router.get('/:serviceId', isIdValid, (req, res, next) => {
   if (!req.session.currentUser) {

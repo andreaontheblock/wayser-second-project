@@ -9,7 +9,6 @@ const mongoose = require('mongoose');
 const flash = require('connect-flash');
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
 const servicesRouter = require('./routes/services');
 const profileRouter = require('./routes/profile');
@@ -46,11 +45,6 @@ app.use(session({
   }
 }));
 
-// app.use((req, res, next) => {
-//   req.session.backURL = req.header('Referrer');
-//   next();
-// });
-
 app.use(flash());
 
 app.use(function (req, res, next) {
@@ -59,7 +53,6 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/auth', authRouter);
 app.use('/services', servicesRouter);
 app.use('/profile', profileRouter);
