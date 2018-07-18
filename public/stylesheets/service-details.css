@@ -2,27 +2,29 @@
 
 .service-details {
   margin-top: 53px;
-  height: 100vh;
-  background-color: #F39477;
-  /* background-color: blanchedalmond; */
+  height: 150vh;
 }
 
 .service-details h1 {
   text-align: center;
   font-size: 2rem;
-  padding-top: 8vh;
+  padding-top: 1vh;
+  margin: 0 0 30px;
+}
+
+.service-details .search-field {
+  padding-top: 1vh;
+}
+
+.service-details a {
+  position: absolute;
+  top: 31vh;
+  left: 70vw;
 }
 
 /* ---- components: service details page ---- */
 
-/* .go-back-btn {
-  background-color: orange;
-  width: 25vw;  
-  position: relative;
-  top: 300px;
-  padding: 10px;
-} */
-
 #mapid { 
+  margin-top: 50px;
   height: 180px; 
 }

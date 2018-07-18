@@ -1,0 +1,20 @@
+/* ---- layout: create-service page ---- */
+
+.contact-section {
+  margin-top: 53px;
+  height: 100vh;
+  background-color: rgba(17, 133, 75, 0.5);
+  color: white;
+}
+
+.contact-section h1 {
+  text-align: center;
+  font-size: 2rem;
+  padding-top: 8vh;
+  padding-bottom: 10px;
+}
+
+.contact-section .message-container {
+  display: flex;
+  flex-direction: column;
+}

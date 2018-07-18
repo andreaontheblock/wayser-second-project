@@ -10,6 +10,7 @@
   <div class="container">
     <h1>{{service.name}}</h1>
     <p>Price: {{service.price.amount}}€/{{service.price.unit}}</p>
+    <a href="/services/{{service._id}}/contact">CONTACT</a>
     <p>Category: {{service.category}}</p>
     <p>Provider: {{service.provider.username}}</p>
     <p>Description: {{service.description}}</p>

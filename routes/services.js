@@ -76,4 +76,21 @@ router.get('/:serviceId', isIdValid, (req, res, next) => {
     .catch(next);
 });
 
+router.get('/:serviceId/contact', (req, res, next) => {
+  const serviceId = req.params.serviceId;
+
+  Service.findById(serviceId).populate('provider')
+    .then((service) => {
+      if (!service) {
+        return next();
+      }
+      const data = {
+        username: req.session.currentUser.username,
+        serviceProvider: service.provider.username
+      };
+      res.render('contact', {data: data});
+    })
+    .catch(next);
+});
+
 module.exports = router;
