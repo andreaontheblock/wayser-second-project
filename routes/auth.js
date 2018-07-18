@@ -94,6 +94,14 @@ router.post('/login', isUserLoggedOut, (req, res, next) => {
         return;
       }
       req.session.currentUser = user;
+
+      if (req.session.counter === 1) {
+        var lastUrlbeforeSignIn = req.session.lastURL;
+        req.session.counter = 0;
+
+        res.redirect(`/${lastUrlbeforeSignIn}`);
+        return next;
+      }
       res.redirect('/');
     })
     .catch(next);
