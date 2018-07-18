@@ -15,10 +15,10 @@ router.get('/', isUserLoggedIn, (req, res, next) => {
   };
 
   Service.find(filter).populate('provider')
-    .then((service) => {
+    .then((result) => {
       const data = {
         messages: req.flash('picture-upload-error'),
-        service: service
+        services: result
       };
       res.render('profile', data);
     })
@@ -88,10 +88,17 @@ router.post('/edit-service/:serviceId', isUserLoggedIn, (req, res, next) => {
 // UWU FELIPE EXPRAINNNNN
 router.post('/upload', upload.single('photo'), (req, res, next) => {
   if (!req.file) {
-    req.flash('picture-upload-error', 'please select a file');
+    req.flash('picture-upload-error', 'Please select an image');
     res.redirect('/profile');
     return;
   }
+
+  // if (req.file.format !== 'jpg' && req.file.format !== 'jpeg' && req.file.format !== 'png') {
+  //   req.flash('picture-upload-error', 'Image format not supported');
+  //   res.redirect('/profile');
+  //   return;
+  // }
+
   const imgURL = req.file.url;
   const userId = req.session.currentUser._id;
   User.findByIdAndUpdate(userId, {imgUrl: imgURL}, {new: true})
