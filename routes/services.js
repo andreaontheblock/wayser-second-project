@@ -5,15 +5,17 @@ const router = express.Router();
 
 const Service = require('../models/service');
 const isIdValid = require('../middlewares/isIdValid');
+const buildSortSchema = require('../helpers/sort-schema');
 
 /* GET users listings */
 router.get('/', function (req, res, next) {
   const filter = {};
   const predefinedCategories = ['education', 'technology', 'transportation', 'social-services', 'maintenance', 'business', 'tourism', 'others'];
 
+  let isCat;
   if (req.query.cat) {
     if (predefinedCategories.find(item => item === req.query.cat)) {
-      var isCat = req.query.cat;
+      isCat = req.query.cat;
       filter.category = {
         $regex: new RegExp(req.query.cat.substr(1, 5)),
         $options: 'i'
@@ -23,8 +25,9 @@ router.get('/', function (req, res, next) {
     }
   }
 
+  let isTerms;
   if (req.query.terms) {
-    var isTerms = req.query.terms;
+    isTerms = req.query.terms;
     filter.name = {
       $regex: new RegExp(req.query.terms),
       $options: 'i'
@@ -36,38 +39,8 @@ router.get('/', function (req, res, next) {
     isTerms: isTerms
   };
 
-  let sortSchema = {
-    sort: '',
-    key: ''
-  };
+  let sortSchema = buildSortSchema(req, queryStatus);
 
-  if (req.query.sort) {
-    switch (req.query.sort) {
-    case ('name-asc'):
-      sortSchema.sort = 1;
-      sortSchema.key = 'name';
-      queryStatus.isSortByNameAsc = true;
-      break;
-    case ('name-desc'):
-      sortSchema.sort = -1;
-      sortSchema.key = 'name';
-      queryStatus.isSortByNameDesc = true;
-      break;
-    case ('price-asc'):
-      sortSchema.sort = 1;
-      sortSchema.key = 'price.amount';
-      queryStatus.isSortByPriceAsc = true;
-      break;
-    case ('price-desc'):
-      sortSchema.sort = -1;
-      sortSchema.key = 'price.amount';
-      queryStatus.isSortByPriceDesc = true;
-      break;
-    }
-  } else {
-    sortSchema.sort = 1;
-    sortSchema.key = 'name';
-  }
   const sort = {};
   sort[sortSchema.key] = sortSchema.sort; // Creates an object whose key is 'name'
 
