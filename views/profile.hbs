@@ -1,7 +1,20 @@
 <div class="profile-section">
   <section class="container-head">
         <div class="img-profile">
-          <img src="/images/user-icon-iconic.png" alt="" width="120" height="90">
+          {{#if service.provider.imgUrl}}
+          <img src="{{service.provider.imgUrl}}" alt="" width="120" height="90">
+          {{/if}}
+          {{#unless service.provider.imgUrl}}
+          <form action="/profile/upload" method="post" enctype="multipart/form-data">
+            <div class="field">
+              <label>Profile Pic</label>
+              <input type="file" name="photo"/>
+            <div>
+              <input type="submit" value="save"/>
+            </div>
+           </div>
+          </form>
+          {{/unless}}
         </div>
         <div class= 'user-email-name'>
           <h2>{{currentUser.username}}</h2>

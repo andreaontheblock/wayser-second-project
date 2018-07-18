@@ -2,8 +2,10 @@
 
 const express = require('express');
 const router = express.Router();
+const upload = require('../middlewares/upload');
 
 const Service = require('../models/service');
+const User = require('../models/user');
 const isUserLoggedIn = require('../middlewares/isUserLoggedIn');
 
 /* GET home page. */
@@ -12,7 +14,7 @@ router.get('/', isUserLoggedIn, (req, res, next) => {
     provider: req.session.currentUser._id
   };
 
-  Service.find(userId).populate('provider')
+  Service.findOne(userId).populate('provider')
     .then((service) => {
       res.render('profile', {service: service});
     })
@@ -79,5 +81,20 @@ router.post('/edit-service/:serviceId', isUserLoggedIn, (req, res, next) => {
     })
     .catch(next);
 });
-
+// UWU FELIPE EXPRAINNNNN
+router.post('/upload', upload.single('photo'), (req, res, next) => {
+  const {name, price} = req.body;
+  if (!req.file) {
+    res.redirect('/validation-error');
+    return;
+  }
+  const imgURL = req.file.url;
+  const userId = req.session.currentUser._id;
+  User.findByIdAndUpdate(userId, {imgUrl: imgURL}, {new: true})
+    .then((result) => {
+      console.log(result);
+      res.redirect('/profile');
+    })
+    .catch(next);
+});
 module.exports = router;
