@@ -9,7 +9,7 @@ const isIdValid = require('../middlewares/isIdValid');
 /* GET users listings */
 router.get('/', function (req, res, next) {
   const filter = {};
-  const predefinedCategories = ['education', 'technology', 'health-care', 'transportation', 'social-services', 'maintenance', 'business', 'tourism', 'others'];
+  const predefinedCategories = ['education', 'technology', 'transportation', 'social-services', 'maintenance', 'business', 'tourism', 'others'];
 
   if (req.query.cat) {
     if (predefinedCategories.find(item => item === req.query.cat)) {

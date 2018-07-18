@@ -148,7 +148,7 @@ User.create(users)
       },
       {
         name: 'Nurse',
-        category: 'Health Care',
+        category: 'Social Services',
         provider: usersIds[2],
         price: {
           amount: 50,
