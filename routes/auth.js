@@ -60,6 +60,14 @@ router.post('/signup', isUserLoggedOut, (req, res, next) => {
           newUser.save()
             .then(() => {
               req.session.currentUser = newUser;
+
+              if (req.session.counter === 1) {
+                var lastUrlbeforeSignIn = req.session.lastURL;
+                req.session.counter = 0;
+
+                res.redirect(`/${lastUrlbeforeSignIn}`);
+                return next;
+              }
               res.redirect('/profile');
             })
             .catch(next);
