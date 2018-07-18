@@ -3,8 +3,9 @@
   <div class="container">
     <h1>CONTACT FORM</h1>
     <p>From: {{data.username}}</p>
-    <p>To: {{data.serviceProvider}}</p>
-    <form method="POST" action="/">
+    <p>To: {{data.service.provider.username}}</p>
+
+    <form method="POST" action="/send-email/{{data.service._id}}">
       <div class="search-field" >
         <div class="message-container">
           <label for="message">Message</label>

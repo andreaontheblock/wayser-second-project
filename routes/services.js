@@ -86,7 +86,7 @@ router.get('/:serviceId/contact', (req, res, next) => {
       }
       const data = {
         username: req.session.currentUser.username,
-        serviceProvider: service.provider.username
+        service: service
       };
       res.render('contact', {data: data});
     })

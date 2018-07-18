@@ -15,6 +15,7 @@ const authRouter = require('./routes/auth');
 const servicesRouter = require('./routes/services');
 const profileRouter = require('./routes/profile');
 const apiRouter = require('./routes/api');
+const sendEmailRouter = require('./routes/send-email');
 
 const app = express();
 
@@ -72,6 +73,7 @@ app.use('/auth', authRouter);
 app.use('/services', servicesRouter);
 app.use('/profile', profileRouter);
 app.use('/api', apiRouter);
+app.use('/send-email', sendEmailRouter);
 
 // -- 404 and error handler
 
