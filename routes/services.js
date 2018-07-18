@@ -14,17 +14,10 @@ router.get('/', function (req, res, next) {
   if (req.query.cat) {
     if (predefinedCategories.find(item => item === req.query.cat)) {
       var isCat = req.query.cat;
-      const serviceCategory = req.query.cat;
-      let correctServiceCategory = serviceCategory.charAt(0).toUpperCase() + serviceCategory.substr(1); // UWU SUPER GREAT CODE IN ONE FUKIN LINE!!
-      // @todo
-      if (correctServiceCategory.includes('-')) {
-        correctServiceCategory = correctServiceCategory.replace(/-/, ' ');
-        let array = correctServiceCategory.split(' ');
-        let arrayUpperCased = array[1].charAt(0).toUpperCase() + array[1].substr(1);
-        array[1] = arrayUpperCased;
-        correctServiceCategory = array.join(' ');
-      }
-      filter.category = correctServiceCategory;
+      filter.category = {
+        $regex: new RegExp(req.query.cat.substr(1, 5)),
+        $options: 'i'
+      };
     } else {
       return (next());
     }
