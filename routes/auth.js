@@ -9,7 +9,6 @@ const User = require('../models/user');
 const isUserLoggedOut = require('../middlewares/isUserLoggedOut');
 const saltRounds = 10;
 
-// the routes to render the form is /auth/signup
 router.get('/signup', isUserLoggedOut, (req, res, next) => {
   const data = {
     messages: req.flash('signup-error')
@@ -39,7 +38,7 @@ router.post('/signup', isUserLoggedOut, (req, res, next) => {
             res.redirect('/auth/signup');
             return;
           }
-          if (!validator.isEmail(req.body.email)) { // Validating email
+          if (!validator.isEmail(req.body.email)) {
             req.flash('signup-error', 'Please enter a valid email');
             res.redirect('/auth/signup');
             return;
@@ -51,12 +50,24 @@ router.post('/signup', isUserLoggedOut, (req, res, next) => {
           const newUser = new User({
             username: req.body.username,
             password: hashedPassword,
-            email: req.body.email
+            email: req.body.email,
+            location: {
+              type: 'Point',
+              coordinates: [req.body.latitude, req.body.longitude]
+            }
           });
 
           newUser.save()
             .then(() => {
               req.session.currentUser = newUser;
+
+              if (req.session.counter === 1) {
+                var lastUrlbeforeSignIn = req.session.lastURL;
+                req.session.counter = 0;
+
+                res.redirect(`/${lastUrlbeforeSignIn}`);
+                return next;
+              }
               res.redirect('/profile');
             })
             .catch(next);
@@ -91,6 +102,14 @@ router.post('/login', isUserLoggedOut, (req, res, next) => {
         return;
       }
       req.session.currentUser = user;
+
+      if (req.session.counter === 1) {
+        var lastUrlbeforeSignIn = req.session.lastURL;
+        req.session.counter = 0;
+
+        res.redirect(`/${lastUrlbeforeSignIn}`);
+        return next;
+      }
       res.redirect('/');
     })
     .catch(next);

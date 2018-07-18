@@ -1,5 +1,6 @@
 'use strict';
 
+require('dotenv').config();
 // const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -9,18 +10,23 @@ const mongoose = require('mongoose');
 const flash = require('connect-flash');
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
 const servicesRouter = require('./routes/services');
 const profileRouter = require('./routes/profile');
+const apiRouter = require('./routes/api');
 
 const app = express();
 
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
-const dbName = 'wayser';
-mongoose.connect(`mongodb://localhost/${dbName}`);
+// const dbName = 'wayser';
+
+mongoose.Promise = Promise;
+mongoose.connect(process.env.MONGODB_URI, {
+  keepAlive: true,
+  reconnectTries: Number.MAX_VALUE
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -31,8 +37,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-// antes de las rutas
 
 app.use(session({
   store: new MongoStore({
@@ -47,11 +51,6 @@ app.use(session({
   }
 }));
 
-// app.use((req, res, next) => {
-//   req.session.backURL = req.header('Referrer');
-//   next();
-// });
-
 app.use(flash());
 
 app.use(function (req, res, next) {
@@ -60,10 +59,10 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/auth', authRouter);
 app.use('/services', servicesRouter);
 app.use('/profile', profileRouter);
+app.use('/api', apiRouter);
 
 // -- 404 and error handler
 
@@ -84,5 +83,7 @@ app.use((err, req, res, next) => {
     res.render('error');
   }
 });
+
+// process.env.CLOUDINARY_NAME, etc.
 
 module.exports = app;

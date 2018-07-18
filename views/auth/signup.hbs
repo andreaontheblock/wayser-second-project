@@ -13,6 +13,16 @@
         <input class="credentials-input" type="text" name="email" placeholder="e.g. andrea@andrea.com">
       </div>
       <a class='log-in-link' href="/auth/login">Or log in</a>
+
+      <div class="field" >
+        <label hidden for="latitude">Latitude</label>
+        <input type="hidden" name="latitude" placeholder="ej: 6098765432">
+      </div>
+      <div class="field" >
+        <label hidden for="longitude">Longitude</label>
+        <input type="hidden" name="longitude" placeholder="ej: 099087">
+      </div>
+
       <div class="signup-btn-container">
         <button class="login-btn">Create account</button>
       </div>
@@ -26,3 +36,5 @@
   </section>
 
 </div>
+
+<script src="/javascripts/location.js"></script>

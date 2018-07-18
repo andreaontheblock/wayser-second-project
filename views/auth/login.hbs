@@ -11,6 +11,16 @@
         <input class="credentials-input" type="password" name="password" placeholder="e.g. Securepassword12">
       </div>
       <a class='sign-in-link' href="/auth/signup">Or Sign up</a>
+      
+      <div class="field" >
+        <label hidden for="latitude">Latitude</label>
+        <input type="hidden" name="latitude" placeholder="ej: 6098765432">
+      </div>
+      <div class="field" >
+        <label hidden for="longitude">Longitude</label>
+        <input type="hidden" name="longitude" placeholder="ej: 099087">
+      </div>
+      
       <div class="login-btn-container">
         <button class="login-btn">LOG IN</button>
       </div>
@@ -24,5 +34,8 @@
   </section>
 
 </div>
+
+<script src="/javascripts/location.js"></script>
+
 
 
