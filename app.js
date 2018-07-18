@@ -1,5 +1,6 @@
 'use strict';
 
+require('dotenv').config();
 // const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -19,8 +20,13 @@ const app = express();
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
-const dbName = 'wayser';
-mongoose.connect(`mongodb://localhost/${dbName}`);
+// const dbName = 'wayser';
+
+mongoose.Promise = Promise;
+mongoose.connect(process.env.MONGODB_URI, {
+  keepAlive: true,
+  reconnectTries: Number.MAX_VALUE
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -77,5 +83,7 @@ app.use((err, req, res, next) => {
     res.render('error');
   }
 });
+
+// process.env.CLOUDINARY_NAME, etc.
 
 module.exports = app;
