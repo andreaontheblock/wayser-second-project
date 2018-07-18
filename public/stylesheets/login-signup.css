@@ -56,6 +56,12 @@
   display: flex;
   justify-content: center;
 }
+.sign-in-link,
+.log-in-link {
+  color: white;
+  margin-left: 200px;
+  font-size: 19px;
+}
 .validation li {
   background-color: red;
   color: #ffffff;
@@ -79,4 +85,5 @@
   color: white;
   background-color: rgb(69, 19, 99);
   margin-top: 30px;
+  margin-bottom: 15px;
 }

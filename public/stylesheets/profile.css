@@ -67,6 +67,9 @@
   padding-top: 30px;
   display: flex;
   justify-content: center;
+  align-self: center;
+  width: 150px;
+  height: 150px;
 }
 
 .services-section-profile {
@@ -86,6 +89,17 @@
 }
 
 /* ---- components: profile page ---- */
+.container-head {
+height:190px;
+display: flex;
+justify-content: space-around;
+}
+
+.user-email-name{
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
 
 .service-container a,
 .adding-service a {

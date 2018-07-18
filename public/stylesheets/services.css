@@ -3,7 +3,6 @@
 .services-section {
   margin-top: 53px;
   height: 200%;
-  background-color: #F39477;
   margin-bottom:30px;
 }
 
@@ -51,11 +50,9 @@
 }
 
 .card-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
   border-bottom: 1px solid grey;
-  background-color: white;
+  opacity: 0.8;
+  background: linear-gradient(to top, red,indigo, violet);
   display: flex;
     justify-content: center;
     align-items: center;
