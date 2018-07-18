@@ -1,5 +1,12 @@
 <section class="service-details">
 
+  <form method="GET" action="/services">
+    <div class="search-field" >
+      <input class="service-input" type="text" name="terms" placeholder="What service do you need?"/>
+      <button class="search-btn" type="submit">Search</button>
+    </div>
+  </form>
+
   <div class="container">
     <h1>{{service.name}}</h1>
     <p>Price: {{service.price.amount}}€/{{service.price.unit}}</p>
