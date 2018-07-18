@@ -1,16 +1,21 @@
 <div class="profile-section">
   <section class="container-head">
         <div class="img-profile">
-          {{#if service.provider.imgUrl}}
-          <img src="{{service.provider.imgUrl}}" alt="" width="120" height="90">
+          {{#if currentUser.imgUrl}}
+          <img src="{{currentUser.imgUrl}}" alt="" width="120" height="90">
           {{/if}}
-          {{#unless service.provider.imgUrl}}
+          {{#unless currentUser.imgUrl}}
           <form action="/profile/upload" method="post" enctype="multipart/form-data">
             <div class="field">
               <label>Profile Pic</label>
               <input type="file" name="photo"/>
             <div>
               <input type="submit" value="save"/>
+              {{#if messages.length}}
+              <ul class="validation">
+                {{#each messages}}<li>{{this}}</li>{{/each}}
+              </ul>
+              {{/if}}
             </div>
            </div>
           </form>

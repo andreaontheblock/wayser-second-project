@@ -10,13 +10,17 @@ const isUserLoggedIn = require('../middlewares/isUserLoggedIn');
 
 /* GET home page. */
 router.get('/', isUserLoggedIn, (req, res, next) => {
-  const userId = {
+  const filter = {
     provider: req.session.currentUser._id
   };
 
-  Service.findOne(userId).populate('provider')
+  Service.find(filter).populate('provider')
     .then((service) => {
-      res.render('profile', {service: service});
+      const data = {
+        messages: req.flash('picture-upload-error'),
+        service: service
+      };
+      res.render('profile', data);
     })
     .catch(next);
 });
@@ -83,16 +87,16 @@ router.post('/edit-service/:serviceId', isUserLoggedIn, (req, res, next) => {
 });
 // UWU FELIPE EXPRAINNNNN
 router.post('/upload', upload.single('photo'), (req, res, next) => {
-  const {name, price} = req.body;
   if (!req.file) {
-    res.redirect('/validation-error');
+    req.flash('picture-upload-error', 'please select a file');
+    res.redirect('/profile');
     return;
   }
   const imgURL = req.file.url;
   const userId = req.session.currentUser._id;
   User.findByIdAndUpdate(userId, {imgUrl: imgURL}, {new: true})
-    .then((result) => {
-      console.log(result);
+    .then((updatedUser) => {
+      req.session.currentUser = updatedUser;
       res.redirect('/profile');
     })
     .catch(next);
