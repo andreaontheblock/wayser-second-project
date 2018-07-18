@@ -12,10 +12,10 @@ const userSchema = new Schema({
       type: String
     },
     coordinates: [Number]
-  }
+  },
+  imgUrl: String
 });
 
 // estamos creando TEMPLATES NO creando en sí. Movie con mayuscula pq es como si fuese un constructor
 const User = mongoose.model('User', userSchema);
-
 module.exports = User;
