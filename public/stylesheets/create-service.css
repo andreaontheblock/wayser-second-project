@@ -3,7 +3,11 @@
 .create-service-container {
   margin-top: 53px;
   height: 100vh;
-  background-color: white;
+  background-color: rgb(112, 17, 65);
+}
+
+.create-service-container label,
+.create-service-container h1 {
   color: white;
 }
 
@@ -33,14 +37,14 @@
 .select-price-unit {
   background-color: white;
   padding: 5px;
-  width: 54.2%;
+  width: 50%;
 }
 
 /* ---- components: create-service page ---- */
 
 .service-added-btn {
   width: 100%;
-  background-color: #F2B379;
+  background-color: rgb(194, 122, 55);
   color: white;
   margin-top: 30px;
 }
