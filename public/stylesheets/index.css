@@ -95,6 +95,15 @@
 
 /* ------------- media queries ---------------- */
 
+@media (min-width: 413px) {
+  .category-container img {
+    height: 90px;
+  }
+  .category-btns {
+    margin-bottom: 50px;
+  }
+}
+
 @media (min-width: 768px) {
   .category-container img {
     height: 200px;
@@ -111,8 +120,9 @@
   .index-page {
     height: 900px;
   }
-  .category-btns{
-   
+  .service-input {
+    margin-left: 150px;
+    max-width: 550px;
   }
 }
 
