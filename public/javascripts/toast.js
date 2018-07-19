@@ -1,12 +1,7 @@
 function main () {
-  // var c = document.getElementById('email-submit');
-  // // window.service;
-  // // var serviceProvider = windows;
-  // // console.log(serviceProvider);
-  // console.log(c);
+  const serviceProvider = window.service.serviceProvider;
   document.getElementById('email-submit').addEventListener('click', function () {
-    console.log('hello');
-    toastr.info('Email sent successfully');
+    toastr.info(`Email sent successfully to ${serviceProvider}`);
   });
 }
 
