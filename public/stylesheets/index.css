@@ -99,11 +99,20 @@
   .category-container img {
     height: 200px;
   }
+  .category-btns {
+    margin-bottom: 50px;
+  }
 }
 
 @media (min-width: 960px) {
   .category-container img {
     height: 250px;
+  }
+  .index-page {
+    height: 900px;
+  }
+  .category-btns{
+   
   }
 }
 
@@ -119,9 +128,7 @@
   }
   .service-input {
     margin-left: 250px;
-  }
-  
-  .service-input {
     max-width: 800px;
   }
+
 }
