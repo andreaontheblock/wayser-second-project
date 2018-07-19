@@ -95,15 +95,34 @@
 
 /* ------------- media queries ---------------- */
 
+@media (min-width: 413px) {
+  .category-container img {
+    height: 90px;
+  }
+  .category-btns {
+    margin-bottom: 50px;
+  }
+}
+
 @media (min-width: 768px) {
   .category-container img {
     height: 200px;
+  }
+  .category-btns {
+    margin-bottom: 50px;
   }
 }
 
 @media (min-width: 960px) {
   .category-container img {
     height: 250px;
+  }
+  .index-page {
+    height: 900px;
+  }
+  .service-input {
+    margin-left: 150px;
+    max-width: 550px;
   }
 }
 
@@ -119,9 +138,7 @@
   }
   .service-input {
     margin-left: 250px;
-  }
-  
-  .service-input {
     max-width: 800px;
   }
+
 }
