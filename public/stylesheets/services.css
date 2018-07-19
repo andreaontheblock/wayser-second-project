@@ -9,8 +9,8 @@
 .services-section h1 {
   text-align: center;
   font-size: 2rem;
-  padding-top: 8vh;
   padding-bottom: 10px;
+  margin-top: 0;
 }
 
 .services-section h4,
@@ -52,7 +52,7 @@
 .card-top {
   border-bottom: 1px solid grey;
   opacity: 0.8;
-  background: linear-gradient(to top, red,indigo, violet);
+  background: rgb(112, 17, 65);
   display: flex;
     justify-content: center;
     align-items: center;
