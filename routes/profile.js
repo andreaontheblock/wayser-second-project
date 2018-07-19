@@ -7,6 +7,7 @@ const upload = require('../middlewares/upload');
 const Service = require('../models/service');
 const User = require('../models/user');
 const isUserLoggedIn = require('../middlewares/isUserLoggedIn');
+const editImg = require('../helpers/edit-img');
 
 /* GET home page. */
 router.get('/', isUserLoggedIn, (req, res, next) => {
@@ -93,7 +94,7 @@ router.post('/upload', upload.single('photo'), (req, res, next) => {
     return;
   }
 
-  const imgURL = req.file.url;
+  const imgURL = editImg(req.file.url);
   const userId = req.session.currentUser._id;
   User.findByIdAndUpdate(userId, {imgUrl: imgURL}, {new: true})
     .then((updatedUser) => {
