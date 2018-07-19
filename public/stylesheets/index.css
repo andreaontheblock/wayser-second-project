@@ -78,8 +78,8 @@
 
 .category-container {
   background-color: rgb(69, 19, 99);
-  width: 49.5%;
-  margin-bottom: 5px;
+  width: 48.5%;
+  margin-bottom: 10px;
   border: 1px solid grey;
   display: flex;
   flex-direction: column;
@@ -95,7 +95,7 @@
 
 /* ------------- media queries ---------------- */
 
-@media (min-width: 413px) {
+@media (min-width: 370px) {
   .category-container img {
     height: 90px;
   }
@@ -129,7 +129,7 @@
 @media (min-width: 1200px) {
   .category-container {
     max-width: 30%;
-    height: 300px;
+    height: 292px;
   }
   .category-btns {
     justify-content: space-around;
