@@ -27,11 +27,18 @@ router.get('/', isUserLoggedIn, (req, res, next) => {
 });
 
 router.get('/create-service', isUserLoggedIn, (req, res, next) => {
-  res.render('create-service');
+  const data = {
+    messages: req.flash('create-service-error')
+  };
+  res.render('create-service', data);
 });
 
 router.post('/create-service', isUserLoggedIn, (req, res, next) => {
-  console.log(req.body);
+  if (!req.body.job || !req.body.category || !req.body.priceNumber || !req.body.priceText || req.body.description) {
+    req.flash('create-service-error', 'Please complete all fields');
+    res.redirect('/profile/create-service');
+    return;
+  }
 
   const newService = new Service({
     name: req.body.job,
