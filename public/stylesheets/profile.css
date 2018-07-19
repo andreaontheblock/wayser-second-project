@@ -8,12 +8,17 @@
   color: black;
 }
 
-.profile-section h2,
-.profile-section h3, 
-.profile-section p,
-.profile-section h4 {
+.services-section-profile h2,
+.services-section-profile, 
+.services-section-profile p {
   margin: 0;
+  color: rgb(112, 17, 65);
+}
+
+.container-head h2,
+.container-head p {
   color: white;
+  margin: 0;
 }
 
 .profile-section h3 {
@@ -24,7 +29,7 @@
   border-bottom: 1px solid white;
   text-align: center;
   margin-bottom: 10px;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
 }
 
 .profile-section h2,
@@ -35,7 +40,8 @@
 }
 
 .profile-section p {
-  padding-bottom: 10px;
+  padding-bottom: 5px;
+  padding-top: 5px;
   text-align: justify;
 }
 
@@ -52,10 +58,21 @@
 
 .service-container {
   margin-bottom: 20px;
-  background-image: url('/images/magenta.png');
-  /* background-color: rgb(112, 17, 65); */
+  /* background-image: url('/images/magenta.png'); */
+  border: 1px solid rgb(112, 17, 65);
   /* border-radius: 5vw; */
   padding: 20px;
+}
+
+.service-name-container {
+  background-color: rgb(112, 17, 65);
+}
+
+.service-name-container h4 {
+  color: white;
+  margin: 0;
+  padding: 10px;
+
 }
 
 .service-profile-list {
