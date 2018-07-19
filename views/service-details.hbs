@@ -9,12 +9,15 @@
 
   <div class="container">
     <h1>{{service.name}}</h1>
-    <p>Price: {{service.price.amount}}€/{{service.price.unit}}</p>
+
+    <img src="{{service.provider.imgUrl}}" alt="" width="240" height="240">
     <a href="/services/{{service._id}}/contact">CONTACT</a>
-    <img src="{{service.provider.imgUrl}}" alt="" width="150" height="150">
+
+    <h3>{{service.provider.username}}</h3>
+    <p>Price: {{service.price.amount}}€/{{service.price.unit}}</p>
     <p>Category: {{service.category}}</p>
-    <p>Provider: {{service.provider.username}}</p>
     <p>Description: {{service.description}}</p>
+    <p>Location:</p>
     <div id="mapid"></div>
   </div>
 
