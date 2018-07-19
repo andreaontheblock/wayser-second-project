@@ -88,8 +88,40 @@
   align-self: center;
   align-items: center;
 }
-}
 
 .category-container img {
   border: 1px solid grey;
+}
+
+/* ------------- media queries ---------------- */
+
+@media (min-width: 768px) {
+  .category-container img {
+    height: 200px;
+  }
+}
+
+@media (min-width: 960px) {
+  .category-container img {
+    height: 250px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .category-container {
+    max-width: 30%;
+    height: 300px;
+  }
+  .category-btns {
+    justify-content: space-around;
+    height: 1000px;
+    margin-bottom: 50px;
+  }
+  .service-input {
+    margin-left: 250px;
+  }
+  
+  .service-input {
+    max-width: 800px;
+  }
 }
