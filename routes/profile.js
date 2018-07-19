@@ -59,16 +59,24 @@ router.post('/create-service', isUserLoggedIn, (req, res, next) => {
 });
 
 router.get('/edit/:serviceId', isUserLoggedIn, (req, res, next) => {
+  const data = {
+    messages: req.flash('edit-service-error')
+  };
   Service.findById(req.params.serviceId).populate('provider')
     .then((service) => {
-      res.render('edit-service', {service: service});
+      res.render('edit-service', {service: service, data: data});
     })
     .catch(next);
 });
 
-// is info required to create a service??
 // projections
 router.post('/edit-service/:serviceId', isUserLoggedIn, (req, res, next) => {
+  const serviceId = req.params.serviceId;
+  if (!req.body.job || !req.body.category || !req.body.priceNumber || !req.body.priceText || !req.body.description) {
+    req.flash('edit-service-error', 'Please complete all fields');
+    res.redirect(`/profile/edit/${serviceId}`);
+    return;
+  }
   const data = {
     name: req.body.job,
     category: req.body.category,

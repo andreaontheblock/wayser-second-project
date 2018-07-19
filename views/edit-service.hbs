@@ -43,6 +43,11 @@
       <div class="field submit">
         <button class="service-added-btn" type="submit">SAVE CHANGES</button>
       </div>
+      {{#if data.messages.length}}
+      <ul class="validation">
+        {{#each data.messages}}<li>{{this}}</li>{{/each}}
+      </ul>
+      {{/if}}
     </form>
 
   </section>
