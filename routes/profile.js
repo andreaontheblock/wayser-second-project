@@ -101,7 +101,7 @@ router.post('/edit-service/:serviceId', isUserLoggedIn, (req, res, next) => {
     })
     .catch(next);
 });
-// UWU FELIPE EXPRAINNNNN
+
 router.post('/upload', upload.single('photo'), (req, res, next) => {
   if (!req.file) {
     req.flash('picture-upload-error', 'Please select an image');
