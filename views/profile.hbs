@@ -5,20 +5,7 @@
           <img src="{{currentUser.imgUrl}}" alt="" width="120" height="90">
           {{/if}}
           {{#unless currentUser.imgUrl}}
-          <form action="/profile/upload" method="post" enctype="multipart/form-data">
-            <div class="field">
-              <label>Profile Pic</label>
-              <input type="file" name="photo"/>
-            <div>
-              <input type="submit" value="save"/>
-              {{#if messages.length}}
-              <ul class="validation">
-                {{#each messages}}<li>{{this}}</li>{{/each}}
-              </ul>
-              {{/if}}
-            </div>
-           </div>
-          </form>
+          <img src="/images/profile-pic.jpg" alt="" width="120" height="90">
           {{/unless}}
         </div>
         <div class= 'user-email-name'>
@@ -28,6 +15,18 @@
   </section>
   <div class="services-section-profile">
     <section class="container">
+        {{#unless currentUser.imgUrl}}
+          <form action="/profile/upload" method="post" enctype="multipart/form-data">
+            <p>Please upload profile picture:</p>
+            <input type="file" name="photo"/>
+            <input type="submit" value="Save"/>
+            {{#if messages.length}}
+            <ul class="validation">
+              {{#each messages}}<li>{{this}}</li>{{/each}}
+            </ul>
+            {{/if}}
+          </form>
+          {{/unless}}
         <h3>Your services:</h3>
         <ul class="service-profile-list">
           {{#each services}}

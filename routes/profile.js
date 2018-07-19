@@ -93,12 +93,6 @@ router.post('/upload', upload.single('photo'), (req, res, next) => {
     return;
   }
 
-  // if (req.file.format !== 'jpg' && req.file.format !== 'jpeg' && req.file.format !== 'png') {
-  //   req.flash('picture-upload-error', 'Image format not supported');
-  //   res.redirect('/profile');
-  //   return;
-  // }
-
   const imgURL = req.file.url;
   const userId = req.session.currentUser._id;
   User.findByIdAndUpdate(userId, {imgUrl: imgURL}, {new: true})

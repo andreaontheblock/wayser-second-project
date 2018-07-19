@@ -18,7 +18,7 @@
 .container-head h2,
 .container-head p {
   color: white;
-  margin: 0;
+  margin: 0;  
 }
 
 .profile-section h3 {
@@ -111,6 +111,25 @@ height:190px;
 display: flex;
 justify-content: space-around;
 }
+
+.services-section-profile form {
+  display: flex;
+  flex-direction: column; 
+}
+
+.services-section-profile input {
+  background-color: rgb(175, 175, 31);
+  width: 100%;
+  text-align: left;
+  font-size: 0.8rem;
+  margin-top: 5px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+
+
+
 
 .user-email-name{
   display: flex;
