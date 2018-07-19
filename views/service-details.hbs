@@ -11,6 +11,7 @@
     <h1>{{service.name}}</h1>
     <p>Price: {{service.price.amount}}€/{{service.price.unit}}</p>
     <a href="/services/{{service._id}}/contact">CONTACT</a>
+    <img src="{{service.provider.imgUrl}}" alt="" width="150" height="150">
     <p>Category: {{service.category}}</p>
     <p>Provider: {{service.provider.username}}</p>
     <p>Description: {{service.description}}</p>

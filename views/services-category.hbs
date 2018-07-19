@@ -34,7 +34,9 @@
       {{#each services}}
       <div class= "card">
         <div class="card-top">
-          <div class="card-img"></div>
+          <div class="card-img">
+            <img src="{{this.provider.imgUrl}}" alt="" width="90" height="90">
+          </div>
           <a href="/services/{{this._id}}"><button>Details</button></a>
         </div>
         <h4>{{this.name}}</h4>

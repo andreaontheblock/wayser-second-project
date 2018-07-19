@@ -34,7 +34,7 @@ router.get('/create-service', isUserLoggedIn, (req, res, next) => {
 });
 
 router.post('/create-service', isUserLoggedIn, (req, res, next) => {
-  if (!req.body.job || !req.body.category || !req.body.priceNumber || !req.body.priceText || req.body.description) {
+  if (!req.body.job || !req.body.category || !req.body.priceNumber || !req.body.priceText || !req.body.description) {
     req.flash('create-service-error', 'Please complete all fields');
     res.redirect('/profile/create-service');
     return;
