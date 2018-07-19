@@ -41,10 +41,11 @@
           <a href="/profile/create-service">ADD SERVICE</a>
         </div>
           {{#unless currentUser.imgUrl}}
+          <hr>
           <form action="/profile/upload" method="post" enctype="multipart/form-data">
-            <p>Please upload a profile picture:</p>
+            <p>Please add a profile picture:</p>
             <input type="file" name="photo"/>
-            <input class="submit" type="submit" value="SAVE"/>
+            <input class="submit" type="submit" value="UPLOAD PICTURE"/>
             {{#if messages.length}}
             <ul class="validation">
               {{#each messages}}<li>{{this}}</li>{{/each}}

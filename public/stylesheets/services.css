@@ -7,10 +7,24 @@
 }
 
 .services-section h1 {
+  color: rgb(112, 17, 65);
   text-align: center;
   font-size: 2rem;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.services-section h5 {
+  font-size: 1.5rem;
+}
+.services-section select {
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  color: white;
+  background-color: rgb(137, 90, 175);
+  padding: 10px;
 }
 
 .services-section h4,
@@ -19,7 +33,7 @@
 }
 
 .card {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 100%;
   height: 100%;
   margin-top: 3vh;
@@ -30,8 +44,13 @@
   /* background-image: url('/images/person-icon.png'); */
   background-size: contain;
   background-repeat: no-repeat;
-  height: 10vh;
-  width: 50%;
+  height: 150px;
+  width: 150px;
+}
+
+.text-card {
+  margin-left: 15px;
+  padding: 20px 0 20px;
 }
 
 .card-container {
@@ -51,21 +70,33 @@
 
 .card-top {
   border-bottom: 1px solid grey;
-  opacity: 0.8;
   background: rgb(112, 17, 65);
   display: flex;
-    justify-content: center;
-    align-items: center;
+  justify-content: left;
+  align-items: center;
+}
+
+.card-top p,
+.card-top h4,
+.card-top button {
+  color: white;
+  font-size: 1.3rem;
 }
 
 /* ---- components: services-category page ---- */
 
 .card-top button {
-  font-size: 0.8em;
+  font-size: 1em;
   font-family: inherit;
   border: 1px solid grey;
   border-radius: 4px;
-  background-color: orange;
+  background-color: rgb(64, 20, 100);
   padding: 5px;
-  width: 20vw;
+  width: 200px;
+  margin-top: 20px;
+}
+
+.services-section h4 {
+  font-size: 1.5rem;
+  padding-bottom: 10px;
 }

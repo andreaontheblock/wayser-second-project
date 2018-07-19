@@ -181,11 +181,12 @@ justify-content: center;
   background-color: rgb(64, 20, 100);
   padding-right: 25px;
   padding-left: 25px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .adding-service .submit {
+  background-color: rgb(112, 17, 65);
   padding: 10px 0 8px;
-
+  margin-top: 10px;
 }
