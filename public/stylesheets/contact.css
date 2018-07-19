@@ -3,7 +3,7 @@
 .contact-section {
   margin-top: 53px;
   height: 100vh;
-  background-color: rgba(17, 133, 75, 0.5);
+  background-color: rgb(112, 17, 65);
   color: white;
 }
 
@@ -14,7 +14,23 @@
   padding-bottom: 10px;
 }
 
+.contact-section h1,
+.contact-section p,
+.contact-section label {
+  color: white;
+}
+
 .contact-section .message-container {
   display: flex;
   flex-direction: column;
+}
+
+.contact-section button {
+  font-size: inherit;
+  font-family: inherit;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 50px;
+  margin-top: 20px;
 }
