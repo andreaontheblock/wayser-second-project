@@ -15,6 +15,10 @@
   margin-bottom: 25px;
 }
 
+.services-section .search-field {
+  padding-top: 1vh;
+}
+
 .services-section h5 {
   font-size: 1.5rem;
 }
