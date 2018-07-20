@@ -8,14 +8,18 @@
   </form>
 
   <div class="container">
-    <h1>{{service.name}}</h1>
-      {{#if currentUser.imgUrl}}
-      <img src="{{service.provider.imgUrl}}" alt="" width="240" height="240">
-      {{/if}}
-      {{#unless currentUser.imgUrl}}
-      <img src="/images/profile-pic.jpg" alt="" width="240" height="240">
-      {{/unless}}
-    <a href="/services/{{service._id}}/contact">CONTACT</a>
+      <h1>{{service.name}}</h1>
+      <div class="top-part">
+        {{#if currentUser.imgUrl}}
+        <img src="{{service.provider.imgUrl}}" alt="" width="240" height="240">
+        {{/if}}
+        {{#unless currentUser.imgUrl}}
+        <img src="/images/profile-pic.jpg" alt="" width="240" height="240">
+        {{/unless}}
+      <div class="contact-btn">
+        <a href="/services/{{service._id}}/contact">CONTACT</a>
+      </div>
+    </div>
 
     <h3>{{service.provider.username}}</h3>
     <p>Price: {{service.price.amount}}€/{{service.price.unit}}</p>
