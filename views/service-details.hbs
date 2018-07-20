@@ -11,25 +11,28 @@
       <h1>{{service.name}}</h1>
       <div class="top-part">
         {{#if service.provider.imgUrl}}
-        <img src="{{service.provider.imgUrl}}" alt="" width="240" height="240">
+        <img src="{{service.provider.imgUrl}}" alt="" width="200" height="200">
         {{/if}}
         {{#unless service.provider.imgUrl}}
-        <img src="/images/profile-pic.jpg" alt="" width="240" height="240">
+        <img src="/images/profile-pic.jpg" alt="" width="200" height="200">
         {{/unless}}
-      <div class="contact-btn">
-        <a href="/services/{{service._id}}/contact">CONTACT</a>
+        <div class="contact-btn">
+          <h3>{{service.provider.username}}</h3>
+          <a href="/services/{{service._id}}/contact">CONTACT</a>
+        </div>
       </div>
+
+    <div class="service-details-container">
+      <h4><strong>PRICE</strong></h4>
+      <p>{{service.price.amount}}€/{{service.price.unit}}</p>
+      <h4><strong>CATEGORY</strong></h4>
+      <p>{{service.category}}</p>
+      <h4><strong>DESCRIPTION</strong></h4>
+      <p>{{service.description}}</p>
+      <h4><strong>LOCATION</strong></h4>
+      <div id="mapid"></div>
     </div>
 
-    <h3>{{service.provider.username}}</h3>
-    <span>Price: </span>
-    <p><b>{{service.price.amount}}€/{{service.price.unit}}</b></p>
-    <span>Category:</span>
-    <p><b>{{service.category}}</b></p>
-    <span>Description:</span>
-    <p><b>{{service.description}}</b></p>
-    <span>Location:</span>
-    <div id="mapid"></div>
   </div>
 
 </section>

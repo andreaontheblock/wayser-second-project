@@ -28,10 +28,17 @@
 .contact-section button {
   font-size: inherit;
   font-family: inherit;
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  color: white;
   border-radius: 4px;
   padding: 10px;
   margin-bottom: 50px;
   margin-top: 20px;
   background-color: rgb(49, 127, 143);
+}
+
+.contact-section textarea{
+  font-size: 1.1rem;
+  margin-top: 10px;
+  padding: 5px;
 }
