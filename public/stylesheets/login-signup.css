@@ -22,7 +22,7 @@
 .login-section h1,
 .signup-section h1 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.3rem;
   color: white;
 }
 
@@ -59,7 +59,7 @@
 .sign-in-link,
 .log-in-link {
   color: white;
-  font-size: 19px;
+  font-size: 2rem;
 }
 .validation li {
   background-color: red;
@@ -73,7 +73,7 @@
 
 .signup-section .signup-options,
 .login-section .login-options {
-  font-size: 1rem;
+  font-size: 1.2rem;
   display: flex;
   flex-direction: column;
   text-align: right;
@@ -82,10 +82,14 @@
 
 .signup-section .signup-options a,
 .login-section .login-options a {
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-decoration: underline;
 }
 
+.login-section label,
+.signup-section label {
+  font-size: 1.5rem;
+}
 /* ---- components: login / signup page ---- */
 
 .credentials-input,
@@ -100,4 +104,10 @@
   background-color: rgb(69, 19, 99);
   margin-top: 30px;
   margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.login-section span,
+.signup-section span {
+  color: white;  
 }

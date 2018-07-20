@@ -24,7 +24,7 @@
       </div>
       <div class="field" >
         <label>Description:</label>
-        <textarea name="description" rows="10" cols="54">{{service.description}}</textarea>
+        <textarea name="description" rows="10" cols="60">{{service.description}}</textarea>
       </div>
       <div class="field-price" >
         <label>Price(€):</label>
@@ -43,6 +43,11 @@
       <div class="field submit">
         <button class="service-added-btn" type="submit">SAVE CHANGES</button>
       </div>
+      {{#if data.messages.length}}
+      <ul class="validation">
+        {{#each data.messages}}<li>{{this}}</li>{{/each}}
+      </ul>
+      {{/if}}
     </form>
 
   </section>

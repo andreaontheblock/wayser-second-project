@@ -34,13 +34,22 @@
       {{#each services}}
       <div class= "card">
         <div class="card-top">
-          <div class="card-img"></div>
-          <a href="/services/{{this._id}}"><button>Details</button></a>
+          <div class="card-img">
+          {{#if currentUser.imgUrl}}
+            <img src="{{this.provider.imgUrl}}" alt="" width="150" height="150">
+          {{/if}}
+          {{#unless currentUser.imgUrl}}
+          <img src="/images/profile-pic.jpg" alt="" width="150" height="150">
+          {{/unless}}
+          </div>
+          <div class="text-card">
+            <h4>{{this.name}}</h4>
+            <p>{{this.price.amount}}€/{{this.price.unit}}</p>
+            <p>{{this.provider.username}}</p>
+            {{!-- <p>Category: {{this.category}}</p> --}}
+          </di>
+          <a href="/services/{{this._id}}"><button>View Details</button></a>
         </div>
-        <h4>{{this.name}}</h4>
-        <p>{{this.price.amount}}€/{{this.price.unit}}</p>
-        <p>{{this.provider.username}}</p>
-        {{!-- <p>Category: {{this.category}}</p> --}}
       </div>
       {{/each}}
     </article>

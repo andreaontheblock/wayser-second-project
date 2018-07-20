@@ -7,6 +7,7 @@ const upload = require('../middlewares/upload');
 const Service = require('../models/service');
 const User = require('../models/user');
 const isUserLoggedIn = require('../middlewares/isUserLoggedIn');
+const editImg = require('../helpers/edit-img');
 
 /* GET home page. */
 router.get('/', isUserLoggedIn, (req, res, next) => {
@@ -26,11 +27,18 @@ router.get('/', isUserLoggedIn, (req, res, next) => {
 });
 
 router.get('/create-service', isUserLoggedIn, (req, res, next) => {
-  res.render('create-service');
+  const data = {
+    messages: req.flash('create-service-error')
+  };
+  res.render('create-service', data);
 });
 
 router.post('/create-service', isUserLoggedIn, (req, res, next) => {
-  console.log(req.body);
+  if (!req.body.job || !req.body.category || !req.body.priceNumber || !req.body.priceText || !req.body.description) {
+    req.flash('create-service-error', 'Please complete all fields');
+    res.redirect('/profile/create-service');
+    return;
+  }
 
   const newService = new Service({
     name: req.body.job,
@@ -51,16 +59,24 @@ router.post('/create-service', isUserLoggedIn, (req, res, next) => {
 });
 
 router.get('/edit/:serviceId', isUserLoggedIn, (req, res, next) => {
+  const data = {
+    messages: req.flash('edit-service-error')
+  };
   Service.findById(req.params.serviceId).populate('provider')
     .then((service) => {
-      res.render('edit-service', {service: service});
+      res.render('edit-service', {service: service, data: data});
     })
     .catch(next);
 });
 
-// is info required to create a service??
 // projections
 router.post('/edit-service/:serviceId', isUserLoggedIn, (req, res, next) => {
+  const serviceId = req.params.serviceId;
+  if (!req.body.job || !req.body.category || !req.body.priceNumber || !req.body.priceText || !req.body.description) {
+    req.flash('edit-service-error', 'Please complete all fields');
+    res.redirect(`/profile/edit/${serviceId}`);
+    return;
+  }
   const data = {
     name: req.body.job,
     category: req.body.category,
@@ -85,7 +101,7 @@ router.post('/edit-service/:serviceId', isUserLoggedIn, (req, res, next) => {
     })
     .catch(next);
 });
-// UWU FELIPE EXPRAINNNNN
+
 router.post('/upload', upload.single('photo'), (req, res, next) => {
   if (!req.file) {
     req.flash('picture-upload-error', 'Please select an image');
@@ -93,7 +109,7 @@ router.post('/upload', upload.single('photo'), (req, res, next) => {
     return;
   }
 
-  const imgURL = req.file.url;
+  const imgURL = editImg(req.file.url);
   const userId = req.session.currentUser._id;
   User.findByIdAndUpdate(userId, {imgUrl: imgURL}, {new: true})
     .then((updatedUser) => {

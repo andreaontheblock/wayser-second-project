@@ -2,10 +2,10 @@
   <section class="container-head">
         <div class="img-profile">
           {{#if currentUser.imgUrl}}
-          <img src="{{currentUser.imgUrl}}" alt="" width="120" height="90">
+          <img src="{{currentUser.imgUrl}}" alt="" width="100" height="100">
           {{/if}}
           {{#unless currentUser.imgUrl}}
-          <img src="/images/profile-pic.jpg" alt="" width="120" height="90">
+          <img src="/images/profile-pic.jpg" alt="" width="100" height="100">
           {{/unless}}
         </div>
         <div class= 'user-email-name'>
@@ -15,19 +15,7 @@
   </section>
   <div class="services-section-profile">
     <section class="container">
-        {{#unless currentUser.imgUrl}}
-          <form action="/profile/upload" method="post" enctype="multipart/form-data">
-            <p>Please upload profile picture:</p>
-            <input type="file" name="photo"/>
-            <input type="submit" value="Save"/>
-            {{#if messages.length}}
-            <ul class="validation">
-              {{#each messages}}<li>{{this}}</li>{{/each}}
-            </ul>
-            {{/if}}
-          </form>
-          {{/unless}}
-        <h3>Your services:</h3>
+        <h3>YOUR SERVICES</h3>
         <ul class="service-profile-list">
           {{#each services}}
           <div class="service-container">
@@ -35,21 +23,36 @@
               <div class="service-name-container">
                 <h4>{{this.name}}</h4>
               </div>
-              <p>{{this.category}}</p>
-              <p>{{this.price.amount}}€/{{this.price.unit}}</p>
-              <p>{{this.description}}</p>
-              <div class="edit-container">
+              <div class="details-service-container">
+                <p>{{this.price.amount}}€/{{this.price.unit}}</p>
+                <p>{{this.category}}</p>
+                <p>{{this.description}}</p>
+                <div class="edit-container">
                 <a href="/profile/edit/{{this._id}}">EDIT</a>
               </div>
+            </div>
             </li>
           </div>
           {{/each}}
         </ul>
       <div class="adding-service">
-        <h3>Would you like to <br> add a service?</h3>
+        {{!-- <h3>ADD A SERVICE</h3> --}}
         <div class="add-container">
           <a href="/profile/create-service">ADD SERVICE</a>
         </div>
+          {{#unless currentUser.imgUrl}}
+          <hr>
+          <form action="/profile/upload" method="post" enctype="multipart/form-data">
+            <p>Please add a profile picture:</p>
+            <input type="file" name="photo"/>
+            <input class="submit" type="submit" value="UPLOAD PICTURE"/>
+            {{#if messages.length}}
+            <ul class="validation">
+              {{#each messages}}<li>{{this}}</li>{{/each}}
+            </ul>
+            {{/if}}
+          </form>
+          {{/unless}}
       </div>
     </section>
   </div> 
