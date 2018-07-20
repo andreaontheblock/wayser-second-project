@@ -35,10 +35,10 @@
       <div class= "card">
         <div class="card-top">
           <div class="card-img">
-          {{#if currentUser.imgUrl}}
-            <img src="{{this.provider.imgUrl}}" alt="" width="150" height="150">
+          {{#if this.provider.imgUrl}}
+          <img src="{{this.provider.imgUrl}}" alt="" width="150" height="150">
           {{/if}}
-          {{#unless currentUser.imgUrl}}
+          {{#unless this.provider.imgUrl}}
           <img src="/images/profile-pic.jpg" alt="" width="150" height="150">
           {{/unless}}
           </div>
