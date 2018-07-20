@@ -62,8 +62,8 @@
   font-size: 2rem;
 }
 .validation li {
-  background-color: red;
-  color: #ffffff;
+  background-color: rgb(230, 57, 57);
+  color: white;
   list-style-type: none;
   text-align: center;
   width: 100%;

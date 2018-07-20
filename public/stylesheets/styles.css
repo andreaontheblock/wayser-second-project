@@ -107,4 +107,5 @@ a {
   bottom: 0;
   text-align: center;
   padding: 5px 0;
+  z-index: 1000;
 }
