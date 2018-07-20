@@ -31,20 +31,17 @@ Example:
 
 List of other features outside of the MVPs scope
 
-User profile:
 - upload profile picture
 - edit profile
-- ratings
-- location
--'other' unit for the price
--send email
--add phone number
--add service experience
--user profile page
--add comments
--google maps
--paypal payment
-
+- add ratings
+- add comments
+- add location (google maps, etc)
+- send email
+- add phone number
+- add service experience
+- detail 'other' unit for the price
+- show user profile page
+- add paypal payment
 
 ## ROUTES:
 ```
