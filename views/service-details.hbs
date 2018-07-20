@@ -10,10 +10,10 @@
   <div class="container">
       <h1>{{service.name}}</h1>
       <div class="top-part">
-        {{#if currentUser.imgUrl}}
+        {{#if service.provider.imgUrl}}
         <img src="{{service.provider.imgUrl}}" alt="" width="240" height="240">
         {{/if}}
-        {{#unless currentUser.imgUrl}}
+        {{#unless service.provider.imgUrl}}
         <img src="/images/profile-pic.jpg" alt="" width="240" height="240">
         {{/unless}}
       <div class="contact-btn">
