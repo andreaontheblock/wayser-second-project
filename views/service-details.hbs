@@ -22,10 +22,13 @@
     </div>
 
     <h3>{{service.provider.username}}</h3>
-    <p>Price: {{service.price.amount}}€/{{service.price.unit}}</p>
-    <p>Category: {{service.category}}</p>
-    <p>Description: {{service.description}}</p>
-    <p>Location:</p>
+    <span>Price: </span>
+    <p><b>{{service.price.amount}}€/{{service.price.unit}}</b></p>
+    <span>Category:</span>
+    <p><b>{{service.category}}</b></p>
+    <span>Description:</span>
+    <p><b>{{service.description}}</b></p>
+    <span>Location:</span>
     <div id="mapid"></div>
   </div>
 
